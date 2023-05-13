@@ -5,14 +5,14 @@ import Footer from "../Footer/Footer";
 import Routers from "../../router/Routers";
 const Layout = () => {
   return (
-    <>
+    <div>
       <Header></Header>
 
       <div>
         <Routers />
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 export default Layout;

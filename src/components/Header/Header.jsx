@@ -31,14 +31,14 @@ const Header = () => {
   };
   useEffect(() => {
     stickyheader();
-    return ()=> window.removeEventListener('scroll',stickyheader)
+    return () => window.removeEventListener("scroll", stickyheader);
   });
   return (
     <header className="stickey_header" ref={headerRef}>
       <Container>
         <Row>
           <div className="navbar">
-            <div className="logo">
+            <div className="logo ">
               <img src={logo1} alt="logo"></img>
               <div>
                 <h2>
@@ -80,13 +80,11 @@ const Header = () => {
                 <i class="ri-heart-3-line"></i>
               </span>
               <img src={user_profile} alt="profile pic"></img>
-            </div>
-
-            {/* <div className="mobile_menu">
-              <span>
+              <span className="mobile_menu">
                 <i class="ri-menu-line"></i>
               </span>
-            </div> */}
+
+            </div>
           </div>
         </Row>
       </Container>

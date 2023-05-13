@@ -30,9 +30,9 @@ width: 100%;
 height: 70px;
 position: sticky;
 /* line-height: 70px; */
-/* top: 0; */
+top: 0;
 left: 0;
-/* background-color: aliceblue; */
+background-color: aliceblue;
 }
 .nav_icon img {
     height: 30px;
@@ -56,7 +56,7 @@ left: 0;
 .navigation {
     display: flex;
     color: #666;
-    display: inline-block;
+    /* display: inline-block; */
     margin: 0;
     text-transform: uppercase;
 }
@@ -94,6 +94,7 @@ Link {
 .fav_icon ,.cart_icon{
 position: relative;
 cursor: pointer;
+/* display: flex; */
 font-size: 25px;
 }
 .bandage{
@@ -109,3 +110,78 @@ font-size: 25px;
     text-align: center;
 
 }
+.mobile_menu{
+    
+    display: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+ .navigation{
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    height: 100%;
+    display: none;
+}
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: aliceblue;
+    flex-direction: column;
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+    /* display: flex; */
+}
+.mobile_menu{
+    display: inline-block;
+}
+
+.fav_icon ,.cart_icon{
+    position: relative;
+    cursor: pointer;
+    /* display: flex; */
+    font-size: 15px;
+    }
+    .bandage{
+        position: absolute;
+        bottom:60%;
+        left: 80%;
+        height: 15px;
+        width: 15px;
+        color: aliceblue;
+        background-color: #852222;
+        border-radius: 55%;
+        font-size: 10px;
+        text-align: center;
+    
+    }
+    .logo{
+margin-top: 5px;
+    }
+
+    .navbar {
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0px;
+        padding: 0px;
+    
+    }
+    .stickey_header{
+        z-index: 999;
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: aliceblue;
+        }
+    
+
+  }
