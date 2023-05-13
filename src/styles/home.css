@@ -1,0 +1,53 @@
+.section{
+    overflow-y: hidden;
+    background:#334757;
+    color: #e5e5e5;
+    height: 450px;
+}
+
+.content_sub{
+line-height: 30px;
+margin-top: 10px;
+}
+.shop_btn{
+    border: none;
+    outline: none;
+    background: #0c1d25;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+
+}
+
+.hero_img img{
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    float: right;
+    margin-top: 60px;
+}
+.heading{
+    font-weight: 700;
+    font-size: 40px;
+color:#fff;
+}
+.trending_sale{
+/* display: flex; */
+overflow-wrap: break-word;
+}
+.best_sale{
+    overflow-y: hidden;
+    /* overflow-wrap: break-word; */
+}
+.counter_page{
+    background-color: #242644;
+    color: #fff;
+
+}
+.counter_btn{
+    outline: none;
+    border: none;
+    color: #e5e5e5;
+    background-color: #5f6096;
+    border-radius: 10px;
+}

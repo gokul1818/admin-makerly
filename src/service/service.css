@@ -1,0 +1,36 @@
+.service_items {
+    margin-top: 30px;
+    background-color: #575777;
+    padding: 10px;
+    display: flex;
+    border-radius: 15px;
+    height: 100px;
+    cursor: pointer;
+
+    align-items: center;
+}
+
+.service_items span i {
+    background: black;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #fff;
+    padding: 10px;
+    margin-right: 10px;
+    /* display: flex; */
+    /* justify-content: center; */
+
+
+    /* text-align: center; */
+}
+
+.service_card {
+
+    font-family: 'Josefin Sans';
+    color: #fff;
+}
+
+.service_card p {
+    color: #e6e6e6;
+    font-size: 15px;
+}
