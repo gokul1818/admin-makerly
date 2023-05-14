@@ -4,8 +4,10 @@ import logo from "../../assets/Makerly.png";
 import logo1 from "../../assets/logo.png";
 import user_profile from "../../assets/profile.png";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "../Header/header.css";
 const Header = () => {
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const Navlink = [
     {
       path: "Home",
@@ -21,12 +23,14 @@ const Header = () => {
       display: "Cart",
     },
   ];
- 
-  
- const menuRef =useRef(null)
-const menu_toggle =()=>menuRef.current.classList.toggle('mobile_menu')
+
+  const menuRef = useRef(null);
+  const menu_toggle = () => menuRef.current.classList.toggle("active_menu");
   return (
-    <header className="stickey_header" >
+    <header
+      className="stickey_header"
+      // ref={menuRef}
+    >
       <Container>
         <Row>
           <div className="navbar">
@@ -40,7 +44,12 @@ const menu_toggle =()=>menuRef.current.classList.toggle('mobile_menu')
               </div>
             </div>
 
-            <div className="navigation pt-3 " ref={menuRef} onClick={menu_toggle}>
+            <div
+              className="navigation pt-3 "
+              ref={menuRef}
+              onClick={menu_toggle}
+            
+            >
               <ul className="menu">
                 {Navlink.map((items) => (
                   <li className="list">
@@ -63,7 +72,7 @@ const menu_toggle =()=>menuRef.current.classList.toggle('mobile_menu')
             </div>
             <div className="nav_icon">
               <span className="cart_icon me-4">
-                <span className="bandage">1</span>
+                <span className="bandage">{totalQuantity}</span>
                 <i class="ri-shopping-cart-fill "></i>
               </span>
               <span className="fav_icon me-4">
@@ -72,10 +81,13 @@ const menu_toggle =()=>menuRef.current.classList.toggle('mobile_menu')
                 <i class="ri-heart-3-line"></i>
               </span>
               <img src={user_profile} alt="profile pic"></img>
-              <span onClick={menu_toggle} className="mobile_menu mx-3">
+              <span
+                // ref={menuRef}
+                onClick={menu_toggle}
+                className="mobile_menu mx-3"
+              >
                 <i class="ri-menu-line"></i>
               </span>
-
             </div>
           </div>
         </Row>

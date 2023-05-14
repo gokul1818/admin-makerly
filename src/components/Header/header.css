@@ -1,7 +1,8 @@
 .navbar {
     height: 60px;
     display: flex;
-    justify-content: space-between;
+    position: fixed;
+    /* justify-content: space-between; */
     margin: 0px;
     padding: 0px;
     /* top: 70px; */
@@ -50,18 +51,23 @@
 .menu {
     list-style: none;
     display: flex;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: 400;
     /* padding-top: 20px; */
     /* justify-content: end; */
     /* align-items: end; */
 }
 
 .navigation {
-    display: flex;
+    /* display: flex; */
+    position: relative;
+    /* position: fixed; */
     color: #666;
-    /* display: inline-block; */
+    display: inline-block;
+    text-align: center;
     margin: 0;
-    text-transform: uppercase;
+    z-index: 9999;
+    /* text-transform: uppercase; */
 }
 
 .navigation p:after {
@@ -127,6 +133,7 @@ Link {
 }
 
 
+
 @media only screen and (max-width: 600px) {
     .navigation {
         position: fixed;
@@ -159,6 +166,9 @@ padding-top: 20px;
     .mobile_menu {
         display: inline-block;
 
+    }
+    .active_menu{
+        display: inline-block;
     }
 
     .fav_icon,

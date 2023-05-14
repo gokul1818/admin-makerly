@@ -1,0 +1,44 @@
+
+.filter_widget select{
+    margin: 25px 10px ;
+    font-family: 'Rubik';
+padding: 10px 10px ;
+background-color: rgb(48, 16, 78);
+color: white;
+cursor: pointer;
+border-radius: 5px;
+
+}
+.filter_widget select option{
+border-radius: 10px;
+outline: none!important;
+}
+.filter_widget select option{
+font-size: 15px;
+background-color: rgba(121, 65, 173, 0.288);
+
+
+}
+.search_box{
+    margin: 27px 10px ;
+width: 70%;
+display: flex;
+border: 1px solid black;
+align-items: center;
+justify-content: space-between;
+padding-right: 15px;
+padding-left: 5px;
+border-radius: 5px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.search_box input{
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #000;
+
+}
+.search_box span{
+    color: #000;
+}

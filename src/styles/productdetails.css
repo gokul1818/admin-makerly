@@ -1,0 +1,40 @@
+.product_img img {
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+}
+
+.product_details h3 {
+    /* margin-top: 40px; */
+    padding-top: 40px;
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+.head {
+    margin-top: 60px;
+}
+
+.product_rating {
+    display: flex;
+    /* margin-right: 20px; */
+    /* align-items: center; */
+}
+
+.star {
+    margin-right: 10px;
+    color: gold;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.shop_btn {
+    background-color: rgb(34, 9, 104);
+    color: #fff;
+    padding: 5px 10px;
+}
