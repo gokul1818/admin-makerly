@@ -4,6 +4,7 @@
     justify-content: space-between;
     margin: 0px;
     padding: 0px;
+    /* top: 70px; */
 
 }
 
@@ -24,16 +25,18 @@
     /* flex-direction: row; */
     float: inline-start;
 }
-.stickey_header{
-z-index: 999;
-width: 100%;
-height: 70px;
-position: sticky;
-/* line-height: 70px; */
-top: 0;
-left: 0;
-background-color: aliceblue;
+
+.stickey_header {
+    z-index: 999;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    /* line-height: 70px; */
+    top: 0;
+    left: 0;
+    background-color: aliceblue;
 }
+
 .nav_icon img {
     height: 30px;
     margin-bottom: 10px;
@@ -62,18 +65,20 @@ background-color: aliceblue;
 }
 
 .navigation p:after {
-    display:block;
+    display: block;
     content: '';
-    border-bottom: solid 3px #019fb6;  
-    transform: scaleX(0);  
+    border-bottom: solid 3px #019fb6;
+    transform: scaleX(0);
     transition: transform 250ms ease-in-out;
 }
-.list{
+
+.list {
     display: inline-block;
     color: #ff0000;
     text-decoration: none;
 }
- .list::after {
+
+.list::after {
     content: '';
     display: block;
     width: 0;
@@ -81,25 +86,30 @@ background-color: aliceblue;
     background: #008cff;
     transition: width .5s;
 }
-.list:hover::after{
+
+.list:hover::after {
     width: 78%;
     /* //transition: width .3s; */
 }
+
 Link {
     text-decoration: none;
     color: black;
     margin-left: 20px;
 
 }
-.fav_icon ,.cart_icon{
-position: relative;
-cursor: pointer;
-/* display: flex; */
-font-size: 25px;
+
+.fav_icon,
+.cart_icon {
+    position: relative;
+    cursor: pointer;
+    /* display: flex; */
+    font-size: 25px;
 }
-.bandage{
+
+.bandage {
     position: absolute;
-    bottom:60%;
+    bottom: 60%;
     left: 80%;
     height: 20px;
     width: 20px;
@@ -110,47 +120,58 @@ font-size: 25px;
     text-align: center;
 
 }
-.mobile_menu{
-    
+
+.mobile_menu {
+
     display: none;
 }
 
 
 @media only screen and (max-width: 600px) {
- .navigation{
-    position: fixed;
-    width: 100%;
-    top:0;
-    left:0;
-    height: 100%;
-    display: none;
-}
-.menu{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: aliceblue;
-    flex-direction: column;
-    z-index: 99999;
-    justify-content: center;
-    align-items: center;
-    /* display: flex; */
-}
-.mobile_menu{
-    display: inline-block;
-}
-
-.fav_icon ,.cart_icon{
-    position: relative;
-    cursor: pointer;
-    /* display: flex; */
-    font-size: 15px;
+    .navigation {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 999;
+        scroll-behavior: smooth;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.473);
     }
-    .bandage{
+
+    .menu {
         position: absolute;
-        bottom:60%;
+        top: 0;
+        left: 0;
+        width: 240px;
+        height: 100%;
+        background-color: whitesmoke;
+        flex-direction: column;
+        z-index: 999999999;
+padding-top: 20px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        /* display: flex; */
+    }
+
+    .mobile_menu {
+        display: inline-block;
+
+    }
+
+    .fav_icon,
+    .cart_icon {
+        position: relative;
+        cursor: pointer;
+        /* display: flex; */
+        font-size: 15px;
+    }
+
+    .bandage {
+        position: absolute;
+        bottom: 60%;
         left: 80%;
         height: 15px;
         width: 15px;
@@ -159,10 +180,11 @@ font-size: 25px;
         border-radius: 55%;
         font-size: 10px;
         text-align: center;
-    
+
     }
-    .logo{
-margin-top: 5px;
+
+    .logo {
+        margin-top: 5px;
     }
 
     .navbar {
@@ -171,9 +193,10 @@ margin-top: 5px;
         justify-content: space-between;
         margin: 0px;
         padding: 0px;
-    
+
     }
-    .stickey_header{
+
+    .stickey_header {
         z-index: 999;
         width: 100%;
         height: 60px;
@@ -181,7 +204,7 @@ margin-top: 5px;
         top: 0;
         left: 0;
         background-color: aliceblue;
-        }
-    
+    }
 
-  }
+
+}

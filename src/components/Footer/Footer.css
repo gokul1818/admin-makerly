@@ -8,3 +8,17 @@ color: black;
 font-weight: 500;
 font-size: 20px;
 }
+@media only screen and (max-width: 600px) {
+
+    .footer{
+        background: #f1f1f1;
+        color: #3d3d3d;
+        padding-top: 10px;
+    }
+    .footer_links h4{
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+    }
+    
+}

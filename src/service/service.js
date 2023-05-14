@@ -9,7 +9,7 @@ const Service = () => {
       <Container>
         <Row>
           {serviceData.map((items, index) => (
-            <Col lg="3" md="4" key={index}>
+            <Col lg="3" md="6" key={index}>
               <motion.div
                 whileHover={{ scale: 1.1, transition: { duration: 1 } }}
                 whileTap={{ scale: 0.9 }}

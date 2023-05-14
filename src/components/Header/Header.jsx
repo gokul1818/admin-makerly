@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Container, Row } from "reactstrap";
 import logo from "../../assets/Makerly.png";
 import logo1 from "../../assets/logo.png";
-import user_profile from "../../assets/user_profile.png";
+import user_profile from "../../assets/profile.png";
 import { NavLink } from "react-router-dom";
 import "../Header/header.css";
 const Header = () => {
@@ -21,20 +21,12 @@ const Header = () => {
       display: "Cart",
     },
   ];
-  const headerRef = useRef(null);
-  const stickyheader = () => {
-    if (document.body.scrollTo > 80 || document.documentElement.scrollTo > 80) {
-      headerRef.current.classList.add("sticky_header");
-    } else {
-      headerRef.current.classList.remove("sticker_header");
-    }
-  };
-  useEffect(() => {
-    stickyheader();
-    return () => window.removeEventListener("scroll", stickyheader);
-  });
+ 
+  
+ const menuRef =useRef(null)
+const menu_toggle =()=>menuRef.current.classList.toggle('mobile_menu')
   return (
-    <header className="stickey_header" ref={headerRef}>
+    <header className="stickey_header" >
       <Container>
         <Row>
           <div className="navbar">
@@ -48,7 +40,7 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="navigation pt-3">
+            <div className="navigation pt-3 " ref={menuRef} onClick={menu_toggle}>
               <ul className="menu">
                 {Navlink.map((items) => (
                   <li className="list">
@@ -80,7 +72,7 @@ const Header = () => {
                 <i class="ri-heart-3-line"></i>
               </span>
               <img src={user_profile} alt="profile pic"></img>
-              <span className="mobile_menu">
+              <span onClick={menu_toggle} className="mobile_menu mx-3">
                 <i class="ri-menu-line"></i>
               </span>
 

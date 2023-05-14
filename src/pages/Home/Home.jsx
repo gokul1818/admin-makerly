@@ -34,7 +34,7 @@ const filternew =products.filter ((items)=>items.category === 'mobile')
           <Container>
             <Row>
               <Col lg="6" md="6">
-                <div className="content mt-5">
+                <div className="content mt-3">
                   <p className="subtitle mb-0 ">latest Products in {year}</p>
                   <h2 className="heading">
                     Additive manufacturing process that creates a physical
@@ -59,8 +59,8 @@ const filternew =products.filter ((items)=>items.category === 'mobile')
                 </div>
               </Col>
               <Col ld="6" md="6">
-                <div className="hero_img">
-                  <img src={hero_img} alt="img"></img>
+                <div className="hero_img ">
+                  <img className="" src={hero_img} alt="img"></img>
                 </div>
               </Col>
             </Row>
@@ -70,7 +70,7 @@ const filternew =products.filter ((items)=>items.category === 'mobile')
         <section className="trending_sale">
           <Container>
             <Row>
-              <Col lg="12">
+              <Col lg="12" >
                 <h3 className="text-center m-5">Trending Products</h3>
               </Col>
               <ProductList data={trendingProducts} />

@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 import "../../styles/ProductCard.css";
 const ProductCard = ({item}) => {
   return (
-    <Col lg="3" md="4">
+    <Col  lg="3" md="4" sm='6' xs='6' className="">
+      <section className="caard">
+
       <motion.div
         whileTap={{ scale: 1.1, transition: { duration: 0.3 } }}
         className="products_items"
-      >
+        >
         <Link
           to={`/shop/${item.id}`}   
           style={{
@@ -32,6 +34,7 @@ const ProductCard = ({item}) => {
           <i class="ri-add-fill"></i>
         </motion.span>
       </div>
+        </section>
     </Col>
   );
 };

@@ -25,7 +25,7 @@ const Footer = () => {
               suscipit repellendus hic.
             </p>
           </Col>
-          <Col lg="3">
+          <Col lg="3" xs='6'>
             <div className="footer_links">
               <h4>Top Categories</h4>
               <>
@@ -75,7 +75,7 @@ const Footer = () => {
               </>
             </div>
           </Col>
-          <Col lg="2">
+          <Col lg="2" xs='6'>
           <div className="footer_links">
               <h4>Link</h4>
               <>
@@ -126,7 +126,7 @@ const Footer = () => {
               </>
             </div>
           </Col>
-          <Col lg="3">
+          <Col lg="3" xs='12'>
           <div className="footer_links">
               <h4>Contact</h4>
               <>
@@ -178,11 +178,23 @@ const Footer = () => {
                   <span>Makerly@gmail.com</span>
                   </Link>
                 </ListGroupItem>
+                <ListGroupItem className="ps-2 ">
+                  <Link
+                    style={{
+                      textDecorationLine: "none",
+                      color: "#3d3d3d",
+                    }}
+                    to="#"
+                  >
+                    <i class="ri-map-pin-fill me-2"></i>
+                  <span>chennai</span>
+                  </Link>
+                </ListGroupItem>
               </>
             </div>
           </Col>
           <Col>
-          <p className="text-center mb-0"> copy rights {year} developed by gokul. All rights reserved</p>
+          <p className="text-center  mb-0"> copy rights {year} developed by gokul. All rights reserved</p>
           </Col>
         </Row>
       </Container>
