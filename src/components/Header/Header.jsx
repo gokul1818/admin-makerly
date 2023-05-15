@@ -3,10 +3,11 @@ import { Container, Row } from "reactstrap";
 import logo from "../../assets/Makerly.png";
 import logo1 from "../../assets/logo.png";
 import user_profile from "../../assets/profile.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "../Header/header.css";
 const Header = () => {
+  const navigate = useNavigate();
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const Navlink = [
     {
@@ -26,6 +27,9 @@ const Header = () => {
 
   const menuRef = useRef(null);
   const menu_toggle = () => menuRef.current.classList.toggle("active_menu");
+  const navigateToCart = () => {
+    navigate("/cart")
+  };
   return (
     <header
       className="stickey_header"
@@ -48,7 +52,6 @@ const Header = () => {
               className="navigation pt-3 "
               ref={menuRef}
               onClick={menu_toggle}
-            
             >
               <ul className="menu">
                 {Navlink.map((items) => (
@@ -71,7 +74,7 @@ const Header = () => {
               </ul>
             </div>
             <div className="nav_icon">
-              <span className="cart_icon me-4">
+              <span className="cart_icon me-4" onClick={navigateToCart}>
                 <span className="bandage">{totalQuantity}</span>
                 <i class="ri-shopping-cart-fill "></i>
               </span>
