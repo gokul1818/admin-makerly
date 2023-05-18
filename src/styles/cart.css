@@ -6,3 +6,18 @@
 tbody i{
     cursor: pointer;
 }
+.total_amount {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+
+}
+.total_amount span{
+    font-size:  20px;
+    line-height: 20px;
+}
+.total_amount p{
+    display: block;
+    color: gray;
+
+}
