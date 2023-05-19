@@ -26,6 +26,9 @@ const filternew =products.filter ((items)=>items.category === 'mobile')
     setnewArrivals(filternew)
   }, []);
   const year = new Date().getFullYear();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  } );
 
   return (
     <div>

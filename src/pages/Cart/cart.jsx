@@ -5,6 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 import CommonSection from "../../components/ui/Commonsection";
 import td_img from "../../assets/images/arm-chair-03.jpg";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 // import { motion } from "framer-motion";
@@ -14,6 +15,9 @@ const Cart = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const [totalamt, setTotalamt] = useState();
   const [shippingfee, setshippingfee] = useState();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   useEffect(() => {
     if (totalAmount > 1000) {
@@ -32,22 +36,46 @@ const Cart = () => {
           <Row>
             <Col ld="9">
               {cart_items == 0 ? (
-                <h4 className="text-center fs-4">no product found</h4>
+                <>
+                  <h4 className="text-center fs-4">no product found</h4>
+                  <div className="contbtn">
+                    <NavLink
+                      style={{
+                        textDecorationLine: "none",
+                      }}
+                      to="/Shop"
+                    >
+                      <button className="">continue shopping </button>
+                    </NavLink>
+                  </div>
+                </>
               ) : (
-                <table className="table bordered">
-                  <thead className="">
-                    <tr>
-                      <th>image</th>
-                      <th>Title</th> <th>price</th> <th>quantity</th>{" "}
-                      <th>delete</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cart_items.map((item, index) => (
-                      <Tr key={index} item={item} />
-                    ))}
-                  </tbody>
-                </table>
+                <>
+                  <table className="table bordered">
+                    <thead className="">
+                      <tr>
+                        <th>image</th>
+                        <th>Title</th> <th>price</th> <th>quantity</th>{" "}
+                        <th>delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cart_items.map((item, index) => (
+                        <Tr key={index} item={item} />
+                      ))}
+                    </tbody>
+                  </table>
+                  <div className="contbtn">
+                    <NavLink
+                      style={{
+                        textDecorationLine: "none",
+                      }}
+                      to="/Shop"
+                    >
+                      <button className="">continue shopping </button>
+                    </NavLink>
+                  </div>
+                </>
               )}
             </Col>
             {cart_items.length >= 1 && (
@@ -72,9 +100,9 @@ const Cart = () => {
                       )}
                     </span>
                   </div>
-                  {totalAmount<1000 &&
-                  <p>(order above ₹1000 get free shipping)</p>
-                  }
+                  {totalAmount < 1000 && (
+                    <p>(order above ₹1000 get free shipping)</p>
+                  )}
                   <hr className="mt-4" />
                   <div className="total_amount ">
                     <span>
@@ -84,6 +112,16 @@ const Cart = () => {
                     <span>₹ {totalAmount + shippingfee}</span>
                   </div>
                 </div>
+                <div className="contbtn">
+                    <NavLink
+                      style={{
+                        textDecorationLine: "none",
+                      }}
+                      to="/Checkout"
+                    >
+                      <button className="">checkout</button>
+                    </NavLink>
+                  </div>
               </Col>
             )}
           </Row>

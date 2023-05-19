@@ -38,6 +38,8 @@ const Header = () => {
       <Container>
         <Row>
           <div className="navbar">
+              
+            <NavLink to='Home'>
             <div className="logo ">
               <img src={logo1} alt="logo"></img>
               <div>
@@ -47,6 +49,7 @@ const Header = () => {
                 </h2>
               </div>
             </div>
+            </NavLink>
 
             <div
               className="navigation pt-3 "

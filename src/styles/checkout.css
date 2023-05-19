@@ -1,0 +1,41 @@
+.checkout_cart{
+    background: #060617;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px;
+}
+.checkout_cart h6{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+.checkout_cart h5{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.check_out_btn {
+
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+    
+    background-color:#2991c2;
+
+}
+.form_grp {
+    padding:  0 5px;
+
+}
+.form_grp input{
+    border-radius: 5px;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid rgb(172, 172, 172);
+    /* border-color:gray ; */
+}

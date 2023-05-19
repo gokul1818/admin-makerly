@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useEffect } from "react";
 import "../../styles/productdetails.css";
 import Helmet from "../../components/helmet/helmet";
 import { Container, Row, Col } from "reactstrap";
@@ -12,6 +12,9 @@ import { toast } from "react-toastify";
 import { cart_Action } from "../../redux/slicer/cart_slice";
 const ProductDetails = () => {
   const dispatch = useDispatch();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  } );
   const [tab, settab] = useState("desc");
   const [rating, setrating] = useState();
   const { id } = useParams();

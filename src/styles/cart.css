@@ -21,3 +21,24 @@ tbody i{
     color: gray;
 
 }
+.btn{
+    float: right;
+}
+.contbtn{
+    display: flex;
+    justify-content: center;
+    margin: 10px ;   
+    text-decoration: none;
+}
+.contbtn button{
+display: flex;
+justify-content: center;
+border: none;
+font-size: 20px;
+outline: none;
+background-color:#2b95c8;
+color: white;
+padding: 10px 10px ;
+border-radius: 5px;
+
+}

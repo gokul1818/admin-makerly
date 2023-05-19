@@ -3,3 +3,16 @@ body {
   padding: 0;
 width: 100%;
 }
+.check_out_btn {
+
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 10px;
+  
+  background-color:#2991c2;
+
+}

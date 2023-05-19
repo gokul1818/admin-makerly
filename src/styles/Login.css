@@ -1,0 +1,31 @@
+.form_box {
+    border: 1px solid black;
+    /* display: flex; */
+   padding-top:40px ;
+    /* align-items: center; */
+    /* top: 0%;
+    bottom: 0%;
+    right: 0%;
+    left: 0%; */
+    min-height: 500px;
+    background-color: #060617;
+    box-shadow: 10px 10px 20px 1px  black;
+    border-radius: 10px;
+    color: #fff;
+    justify-content: center;
+  
+    /* height: 100px; */
+margin-bottom: 20px;
+}
+
+.login_page {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.form_grp input {
+margin-top: 10px;
+}
