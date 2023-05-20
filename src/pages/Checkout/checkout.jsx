@@ -12,8 +12,10 @@ const Checkout = () => {
   useEffect(() => {
     if (totalAmount > 1000) {
       setshippingfee(0);
-    } else {
-      setshippingfee(49);
+    } else if(totalAmount ==0 ) {
+      setshippingfee(0);
+    }else{
+      setshippingfee(49)
     }
   }, [setshippingfee]);
 

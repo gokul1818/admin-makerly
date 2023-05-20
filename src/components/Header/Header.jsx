@@ -2,13 +2,21 @@ import React, { useEffect, useRef } from "react";
 import { Container, Row } from "reactstrap";
 import logo from "../../assets/Makerly.png";
 import logo1 from "../../assets/logo.png";
-import user_profile from "../../assets/profile.png";
+import userIcon from "../../assets/profile.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "../Header/header.css";
+import { Link } from "react-router-dom";
+import UseAuth from "../../customhook/useAuth";
+import { auth } from "../../firebase.config";
+import { signOut } from "firebase/auth";
+import { toast } from "react-toastify";
 const Header = () => {
   const navigate = useNavigate();
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const { currentUser } = UseAuth();
+  const showProfileActionRef = useRef(null);
+
   const Navlink = [
     {
       path: "Home",
@@ -24,12 +32,25 @@ const Header = () => {
       display: "Cart",
     },
   ];
+  const logout = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success("log out successfully");
+        navigate('/home')
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
   const menuRef = useRef(null);
   const menu_toggle = () => menuRef.current.classList.toggle("active_menu");
   const navigateToCart = () => {
-    navigate("/cart")
+    navigate("/cart");
   };
+
+  const toggleProfile = () =>
+    showProfileActionRef.current.classList.toggle("show_profile_action");
   return (
     <header
       className="stickey_header"
@@ -38,17 +59,16 @@ const Header = () => {
       <Container>
         <Row>
           <div className="navbar">
-              
-            <NavLink to='Home'>
-            <div className="logo ">
-              <img src={logo1} alt="logo"></img>
-              <div>
-                <h2>
-                  {" "}
-                  <img src={logo} alt="logo"></img>
-                </h2>
+            <NavLink to="Home">
+              <div className="logo ">
+                <img className="logo_img" src={logo1} alt="logo"></img>
+                <div>
+                  <h2>
+                    {" "}
+                    <img src={logo} alt="logo"></img>
+                  </h2>
+                </div>
               </div>
-            </div>
             </NavLink>
 
             <div
@@ -86,7 +106,45 @@ const Header = () => {
 
                 <i class="ri-heart-3-line"></i>
               </span>
-              <img src={user_profile} alt="profile pic"></img>
+              <div className="profile">
+                <img
+                  // ref={showProfileActionRef}
+                  onClick={toggleProfile}
+                  src={!currentUser ? userIcon : currentUser.photoURL}
+                  alt="Profile"
+                ></img>
+                <div
+                  className="profile_action"
+                  ref={showProfileActionRef}
+                  onClick={toggleProfile}
+                >
+                  {currentUser ? (
+                    <span onClick={logout} >Logout</span>
+                  ) : (
+                    <div className="d-flex">
+                      <Link
+                        to="/Signup"
+                        style={{
+                          textDecorationLine: "none",
+                          color: "black",
+                        }}
+                      >
+                        Signup{" "}
+                      </Link>
+                      /
+                      <Link
+                        to="/Login"
+                        style={{
+                          textDecorationLine: "none",
+                          color: "black",
+                        }}
+                      >
+                        Login{" "}
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              </div>
               <span
                 // ref={menuRef}
                 onClick={menu_toggle}
