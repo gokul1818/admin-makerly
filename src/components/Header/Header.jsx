@@ -16,7 +16,7 @@ const Header = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const { currentUser } = UseAuth();
   const showProfileActionRef = useRef(null);
-
+console.log(currentUser)
   const Navlink = [
     {
       path: "Home",
@@ -60,7 +60,7 @@ const Header = () => {
         <Row>
           <div className="navbar">
             <NavLink to="Home">
-              <div className="logo ">
+              <div className="logo ms-2 ">
                 <img className="logo_img" src={logo1} alt="logo"></img>
                 <div>
                   <h2>

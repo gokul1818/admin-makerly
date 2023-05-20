@@ -29,7 +29,7 @@ const Signup = () => {
         password
       );
       const user = userCredential.user;
-      const storageRef = ref(storage, `image/${Date.now()+ username}`);
+      const storageRef = ref(storage, `image/${Date.now() + username}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       uploadTask.on(
@@ -58,6 +58,7 @@ const Signup = () => {
       setUsername("");
       setemail("");
       setpassword("");
+      navigate("/home");
     } catch (error) {
       setloading(false);
       toast.error(error.message);
