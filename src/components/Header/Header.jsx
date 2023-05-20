@@ -110,8 +110,8 @@ console.log(currentUser,'ll')
                 <img
                   // ref={showProfileActionRef}
                   onClick={toggleProfile}
-                  src={!currentUser ? userIcon : currentUser.photoURL}
-                  alt="Profile"
+                  src={currentUser ? currentUser.photoURL :  userIcon }
+                  alt={currentUser ? currentUser.displayName : 'img'}
                 ></img>
                 <div
                   className="profile_action"
