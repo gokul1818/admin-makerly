@@ -54,10 +54,10 @@ const Signup = () => {
       setloading(false);
       toast.success("account added successfully");
       navigate("/login");
-      setFile("");
-      setUsername("");
-      setemail("");
-      setpassword("");
+      // setFile("");
+      // setUsername("");
+      // setemail("");
+      // setpassword("");
       navigate("/home");
     } catch (error) {
       setloading(false);
@@ -84,6 +84,7 @@ const Signup = () => {
                       onChange={(e) => setUsername(e.target.value)}
                       type="name"
                       placeholder="enter your Username"
+                      required
                     />
                   </FormGroup>
                   <FormGroup className="form_grp">
@@ -92,6 +93,7 @@ const Signup = () => {
                       onChange={(e) => setemail(e.target.value)}
                       type="email"
                       placeholder="enter your email"
+                      required
                     />
                   </FormGroup>
                   <FormGroup className="form_grp">
@@ -100,6 +102,7 @@ const Signup = () => {
                       onChange={(e) => setpassword(e.target.value)}
                       type="password"
                       placeholder="enter your password"
+                      required
                     />
                   </FormGroup>
                   <FormGroup className="form_grp">
@@ -107,6 +110,7 @@ const Signup = () => {
                       style={{ border: "none" }}
                       type="file"
                       onChange={(e) => setFile(e.target.files[0])}
+                      required
                     />
                   </FormGroup>
                   <button

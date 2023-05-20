@@ -16,7 +16,7 @@ const Header = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const { currentUser } = UseAuth();
   const showProfileActionRef = useRef(null);
-console.log(currentUser)
+console.log(currentUser,'ll')
   const Navlink = [
     {
       path: "Home",

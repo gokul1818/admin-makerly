@@ -29,7 +29,7 @@ const Login = () => {
       setloading(false);
       toast("login successfully");
 
-      navigate("/checkout");
+      navigate("/home");
     } catch (error) {
       setloading(false);
       toast(error.message);
