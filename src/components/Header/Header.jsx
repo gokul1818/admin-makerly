@@ -16,7 +16,7 @@ const Header = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const { currentUser } = UseAuth();
   const showProfileActionRef = useRef(null);
-console.log(currentUser,'ll')
+  console.log(currentUser, "ll");
   const Navlink = [
     {
       path: "Home",
@@ -36,7 +36,7 @@ console.log(currentUser,'ll')
     signOut(auth)
       .then(() => {
         toast.success("log out successfully");
-        navigate('/home')
+        navigate("/home");
       })
       .catch((error) => {
         toast.error(error.message);
@@ -49,6 +49,9 @@ console.log(currentUser,'ll')
     navigate("/cart");
   };
 
+  const profiletoggle = () => {
+    navigate("/profile");
+  };
   const toggleProfile = () =>
     showProfileActionRef.current.classList.toggle("show_profile_action");
   return (
@@ -61,7 +64,7 @@ console.log(currentUser,'ll')
           <div className="navbar">
             <NavLink to="Home">
               <div className="logo ms-2 ">
-                <img className="logo_img" src={logo1} alt="logo"></img>
+                {/* <img className="logo_img" src={logo1} alt="logo"></img> */}
                 <div>
                   <h2>
                     {" "}
@@ -108,18 +111,19 @@ console.log(currentUser,'ll')
               </span>
               <div className="profile">
                 <img
+                  onClick={profiletoggle}
                   // ref={showProfileActionRef}
-                  onClick={toggleProfile}
-                  src={currentUser ? currentUser.photoURL :  userIcon }
-                  alt={currentUser ? currentUser.displayName : 'img'}
+                  // onClick={toggleProfile}
+                  src={currentUser ? currentUser.photoURL : userIcon}
+                  alt={currentUser ? currentUser.displayName : "img"}
                 ></img>
-                <div
+                {/* <div
                   className="profile_action"
                   ref={showProfileActionRef}
-                  onClick={toggleProfile}
+                  // onClick={toggleProfile}
                 >
                   {currentUser ? (
-                    <span onClick={logout} >Logout</span>
+                    <span onClick={logout}>Logout</span>
                   ) : (
                     <div className="d-flex">
                       <Link
@@ -143,7 +147,7 @@ console.log(currentUser,'ll')
                       </Link>
                     </div>
                   )}
-                </div>
+                </div> */}
               </div>
               <span
                 // ref={menuRef}

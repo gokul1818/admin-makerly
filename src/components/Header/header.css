@@ -40,17 +40,19 @@
 
 .nav_icon .profile img {
     height: 30px;
- cursor: pointer;
- width: 30px;
- border-radius: 50%;
+    cursor: pointer;
+    width: 30px;
+    border-radius: 50%;
     margin-bottom: 10px;
 }
-.nav_icon.profile{
+
+.nav_icon.profile {
     position: relative;
     z-index: 10;
 }
-.profile_action{
-/* position: absolute;
+
+.profile_action {
+    /* position: absolute;
 top: 100%;
 right: 0%;
 width: 150px;
@@ -63,39 +65,41 @@ cursor: pointer;
 align-items: center;
 flex-direction: column;
 background-color: aliceblue; */
-/* display: none; */
-position: absolute;
-top: 100%;
-right: 0%;
+    /* display: none; */
+    position: absolute;
+    top: 100%;
+    right: 0%;
 
-border-radius: 5px;
-display: flex;
-align-items: center;
-flex-direction: column;
-background-color: aliceblue;
-/* margin-left: 10px; */
-padding: 15px;
-cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: aliceblue;
+    /* margin-left: 10px; */
+    padding: 15px;
+    cursor: pointer;
 
 }
-.show_profile_action{
-display: block;
-position: absolute;
-top: 100%;
-right: 0%;
-width: 150px;
-z-index: 15;
-padding: 10px;
-display: flex;
-display: none;
-cursor: pointer;
-align-items: center;
-flex-direction: column;
-background-color: aliceblue;
+
+.show_profile_action {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 150px;
+    z-index: 15;
+    padding: 10px;
+    display: flex;
+    display: none;
+    cursor: pointer;
+    align-items: center;
+    flex-direction: column;
+    background-color: aliceblue;
 
 
-    
+
 }
+
 .nav_icon {
     font-size: 20px;
     margin-left: 20px;
@@ -208,20 +212,38 @@ Link {
         width: 240px;
         height: 100%;
         background-color: whitesmoke;
-        flex-direction: column;
+        /* flex-direction: column; */
         z-index: 999999999;
-padding-top: 20px;
+padding-left: 0 !important;
+        /* padding-top: 20px; */
+        /* float: left; */
+        /* justify-content: start; */
         flex-direction: column;
-        gap: 10px;
-        align-items: center;
+        /* gap: 10px; */
+        /* align-items: center; */
         /* display: flex; */
+    }
+
+    .list {
+        /* float: left; */
+        border-bottom: 1px solid rgb(167, 167, 167);
+        width: 100%;
+font-size: 20px;
+padding: 10px;
+        /* align-items: center; */
+
+        /* justify-content: flex-start; */
+    }
+   .menu .list {
+        padding-left:0 ;
     }
 
     .mobile_menu {
         display: inline-block;
 
     }
-    .active_menu{
+
+    .active_menu {
         display: inline-block;
     }
 
@@ -230,7 +252,7 @@ padding-top: 20px;
         position: relative;
         cursor: pointer;
         /* display: flex; */
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .bandage {
@@ -273,19 +295,21 @@ padding-top: 20px;
 
 
 
-.nav_icon .profile img {
-    height: 30px;
- cursor: pointer;
- border-radius: 50%;
-    margin-bottom: 10px;
-}
-.nav_icon.profile{
-    position: relative;
-    z-index: 10;
-    /* display: none; */
-}
-.nav_icon .profile .profile_action{
-/* position: absolute;
+    .nav_icon .profile img {
+        height: 30px;
+        cursor: pointer;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .nav_icon.profile {
+        position: relative;
+        z-index: 10;
+        /* display: none; */
+    }
+
+    .nav_icon .profile .profile_action {
+        /* position: absolute;
 top: 100%;
 right: 0%;
 width: 150px;
@@ -298,33 +322,43 @@ cursor: pointer;
 align-items: center;
 flex-direction: column;
 background-color: aliceblue; */
-/* display: none; */
-position: absolute;
-top: 100%;
-margin-top: 10px;
-border-radius: 5px;
-background-color: aliceblue;
-padding: 15px;
-cursor: pointer;
-/* display: none; */
-}
-.show_profile_action{
-display: none;
-position: absolute;
-top: 100%;
-right: 0%;
-width: 150px;
-z-index: 15;
-padding: 10px;
-display: flex;
-display: none;
-cursor: pointer;
-align-items: center;
-flex-direction: column;
-background-color: rgb(18, 127, 223);
+        /* display: none; */
+        position: absolute;
+        top: 100%;
+        margin-top: 10px;
+        border-radius: 5px;
+        background-color: aliceblue;
+        padding: 15px;
+        cursor: pointer;
+        /* display: none; */
+    }
+
+    .show_profile_action {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        width: 150px;
+        z-index: 15;
+        padding: 10px;
+        display: flex;
+        display: none;
+        cursor: pointer;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(18, 127, 223);
 
 
-    
+
+    }
+
+    .logo_img {
+        display: none;
+    }
 }
-.logo_img{display: none;}
+
+.nav_icon {
+    display: flex;
+    align-items: center;
+
 }

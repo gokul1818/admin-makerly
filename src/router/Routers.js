@@ -9,6 +9,8 @@ import Signup from "../pages/Signup/singup";
 import Checkout from "../pages/Checkout/checkout";
 import ProtectedRoute from "./protectedRoute";
 import { Navigate, Route, Routes } from "react-router-dom";
+// import Profile from "../pages/Profile/profile";
+import Profile from "../pages/Profile/profile";
 const Routers = () => {
   return (
     <>
@@ -25,6 +27,14 @@ const Routers = () => {
           element={
             <ProtectedRoute>
               <Checkout />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path="profile"
+          element={
+            <ProtectedRoute>
+              <Profile/>
             </ProtectedRoute>
           }
         ></Route>

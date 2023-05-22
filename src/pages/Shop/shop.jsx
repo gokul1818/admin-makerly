@@ -59,7 +59,7 @@ const Shop = () => {
                   <option>filter by category</option>
                   <option value="sofa">sofa</option>
                   <option value="mobile">mobile</option>
-                  <option value="watches">watches</option>
+                  <option value="watch">watches</option>
                   <option value="wireless">wireless</option>
                 </select>
               </div>
