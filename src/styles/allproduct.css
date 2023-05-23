@@ -1,0 +1,18 @@
+/* .product_table{
+ text-align: center;
+ 
+}
+.product_tablehead{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+} */
+ thead{
+    justify-content: center;
+  
+    
+ }
+ thead tr th{
+        justify-content: space-between;
+        display: flex;
+    }

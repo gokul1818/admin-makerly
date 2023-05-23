@@ -1,10 +1,11 @@
 import React from "react";
 import UseAuth from "../customhook/useAuth";
 import { Navigate } from "react-router-dom";
-const protectedRoute = ({ children }) => {
+import { Outlet } from "react-router-dom";
+const protectedRoute = () => {
   const {currentUser} = UseAuth();
 
-  return currentUser ? children: <Navigate to="/login" />  ;
+  return currentUser ? <Outlet/>: <Navigate to="/login" />  ;
 };
 
 export default protectedRoute;

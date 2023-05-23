@@ -41,7 +41,7 @@
 
     border: 1px soild black;
     border-radius: 10px;
-    width: 500px;
+    /* width: 500px; */
     box-shadow: 10px 2px 20px black;
     padding: 10px 20px;
     margin-top: 20px;
