@@ -2,10 +2,10 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import "../styles/admin.css";
 import usericon from '../assets/images/user-icon.png'
-import UseAuth from "../customhook/useAuth";
+// import UseAuth from "../customhook/useAuth";
 import { NavLink } from "react-router-dom";
 const AdminNav = () => {
-  const { currentUser } = UseAuth();
+  // const { currentUser } = UseAuth();
   const adminNav = [
     {
       display: "Dashboard",

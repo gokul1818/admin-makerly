@@ -2,36 +2,38 @@ import React, { useState } from "react";
 import { Container, Col, Row, Form, FormGroup } from "reactstrap";
 import { db, storage } from "../firebase.config";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { useNavigate } from "react-router";
 import { collection, addDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
+
 // import { upload } from "@testing-library/user-event/dist/upload";
 const AddProduct = () => {
-  const [entertitle, settilte] = useState("");
-  const [enterShortDes, setShortDes] = useState("");
-  const [enterdescription, setdescription] = useState("");
-  const [entercategory, setcategory] = useState("");
-  const [enterprice, setprice] = useState("");
-  const [enterimg, setimg] = useState(null);
+  const [entertitle, setEntertitle] = useState("");
+  const [enterShortDes, setEnterShortDes] = useState("");
+  const [enterdescription, setEnterDescription] = useState("");
+  const [entercategory, setEntercategory] = useState("");
+  const [enterprice, setEnterPrice] = useState("");
+  const [enterimg, setEnterImg] = useState("");
   const [loading, setloading] = useState(false);
-  const navigate = useNavigate();
+
   const addProduct = async (e) => {
     e.preventDefault();
     setloading(true);
+
     try {
       const docRef = await collection(db, "products");
-      const StorageRef = ref(
+      const storageRef = ref(
         storage,
         `products/productsImages${Date.now() + entertitle}`
       );
-      const uploadTask = uploadBytesResumable(StorageRef, enterimg);
+      const uploadTask = uploadBytesResumable(storageRef, enterimg);
 
       uploadTask.on(
-        () => {
-          // toast.error("upload falied ");
+        "state_changed",
+        null,
+        (error) => {
+          toast.error("Upload failed");
         },
         () => {
-          console.log(uploadTask,'dd')
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadUrl) => {
             await addDoc(docRef, {
               productName: entertitle,
@@ -42,16 +44,16 @@ const AddProduct = () => {
               imgUrl: downloadUrl,
             });
           });
-          setimg("");
-          setShortDes("");
-          setcategory("");
-          setdescription("");
-          settilte("");
-          setprice("");
-          setloading(false);
-          toast.success("product added");
 
-          navigate("/dashboard/all-products");
+          setEntertitle("");
+          setEnterShortDes("");
+          setEnterDescription("");
+          setEntercategory("");
+          setEnterPrice("");
+          setEnterImg("");
+          setloading(false);
+          toast.success("Product added");
+          // navigate('/dashboard/all-products');
         }
       );
     } catch (error) {
@@ -59,6 +61,51 @@ const AddProduct = () => {
       setloading(false);
     }
   };
+
+  // const addProduct = async (e) => {
+  //   e.preventDefault();
+  //   setloading(true);
+  //   try {
+  //     const docRef = await collection(db, "products");
+  //     const StorageRef = ref(
+  //       storage,
+  //       `products/productsImages${Date.now() + entertitle}`
+  //     );
+  //     const uploadTask = uploadBytesResumable(StorageRef, enterimg);
+
+  //     uploadTask.on(
+  //       () => {
+  //         toast.error("upload falied ");
+  //       },
+  //       () => {
+  //         console.log(uploadTask,'dd')
+  //         getDownloadURL(uploadTask.snapshot.ref).then(async (downloadUrl) => {
+  //           await addDoc(docRef, {
+  //             productName: entertitle,
+  //             shortDesc: enterShortDes,
+  //             description: enterdescription,
+  //             category: entercategory,
+  //             price: enterprice,
+  //             imgUrl: downloadUrl,
+  //           });
+  //         });
+  //         setimg("");
+  //         setShortDes("");
+  //         setcategory("");
+  //         setdescription("");
+  //         settilte("");
+  //         setprice("");
+  //         setloading(false);
+  //         toast.success("product added");
+
+  //         navigate("/dashboard/all-products");
+  //       }
+  //     );
+  //   } catch (error) {
+  //     toast.error(error.message);
+  //     setloading(false);
+  //   }
+  // };
   return (
     <section>
       <Container>
@@ -76,7 +123,7 @@ const AddProduct = () => {
                       <input
                         type="text"
                         placeholder="Add your Product"
-                        onChange={(e) => settilte(e.target.value)}
+                        onChange={(e) => setEntertitle(e.target.value)}
                         value={entertitle}
                         required
                       ></input>
@@ -86,7 +133,7 @@ const AddProduct = () => {
                       <input
                         required
                         type="text"
-                        onChange={(e) => setShortDes(e.target.value)}
+                        onChange={(e) => setEnterShortDes(e.target.value)}
                         value={enterShortDes}
                         placeholder="short description"
                       ></input>
@@ -96,7 +143,7 @@ const AddProduct = () => {
                       <input
                         type="text"
                         required
-                        onChange={(e) => setdescription(e.target.value)}
+                        onChange={(e) => setEnterDescription(e.target.value)}
                         value={enterdescription}
                         placeholder="description"
                       ></input>
@@ -106,7 +153,7 @@ const AddProduct = () => {
                       <input
                         type="number"
                         required
-                        onChange={(e) => setprice(e.target.value)}
+                        onChange={(e) =>setEnterPrice(e.target.value)}
                         value={enterprice}
                         placeholder="Price"
                       ></input>
@@ -114,7 +161,7 @@ const AddProduct = () => {
                     <FormGroup className="form_grp">
                       <span>Category</span>
                       <select
-                        onChange={(e) => setcategory(e.target.value)}
+                        onChange={(e) => setEntercategory(e.target.value)}
                         value={entercategory}
                       >
                         <option value="chair">chair</option>
@@ -132,7 +179,7 @@ const AddProduct = () => {
                       <span>Product Image</span>
                       <input
                         required
-                        onChange={(e) => setimg(e.target.files[0])}
+                        onChange={(e) => setEnterImg(e.target.files[0])}
                         type="file"
                       ></input>
                     </FormGroup>
