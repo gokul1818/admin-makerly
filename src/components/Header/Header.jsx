@@ -114,8 +114,8 @@ const Header = () => {
                   onClick={profiletoggle}
                   // ref={showProfileActionRef}
                   // onClick={toggleProfile}
-                  src={currentUser ? currentUser.photoURL : userIcon}
-                  alt={currentUser ? currentUser.displayName : "img"}
+                  src={ userIcon}
+                  alt={ "img"}
                 ></img>
                 {/* <div
                   className="profile_action"

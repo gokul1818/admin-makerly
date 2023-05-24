@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import "../styles/admin.css";
+import usericon from '../assets/images/user-icon.png'
 import UseAuth from "../customhook/useAuth";
 import { NavLink } from "react-router-dom";
 const AdminNav = () => {
@@ -18,10 +19,10 @@ const AdminNav = () => {
       display: "Add Products",
       path: "/dashboard/add-product",
     },
-    {
-      display: "users",
-      path: "/dashboard/users",
-    },
+    // {
+    //   display: "users",
+    //   path: "/dashboard/users",
+    // },
   ];
   return (
     <>
@@ -46,7 +47,7 @@ const AdminNav = () => {
                   <span>
                     <i class="ri-settings-4-fill"></i>
                   </span>
-                  <img src={currentUser.photoURL} alt="" />
+                  <img src={usericon} alt="" />
                 </div>
               </div>
             </Row>

@@ -31,10 +31,10 @@ const Profile = () => {
      <Row>
        <Col lg="12" md="12">
          <div className="profile_bar">
-           <label className="label ">Profile photo</label>
+           {/* <label className="label ">Profile photo</label> */}
            <motion.button
              whileTap={{ scale: "0.9" }}
-             className="logout_btn"
+             className="btn btn-primary"
              onClick={logout}
            >
              logout
@@ -44,19 +44,8 @@ const Profile = () => {
      </Row>
      <Row>
        <Col lg="12" md="12">
-         <Row className="profile_box">
-           <Col lg="6">
+         <Row className="profile_box mt-5">
           
-             <div className="profile_img">
-               <motion.img
-              
-               
-               src={currentUser.photoURL}
-               alt="profile"
-               ></motion.img>
-             </div>
-             
-           </Col>
            <Col lg="6">
              <div className="profile_details d-block my-auto">
                <p className="user_name ">

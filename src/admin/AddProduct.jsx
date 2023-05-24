@@ -21,7 +21,8 @@ const AddProduct = () => {
     try {
       const docRef = await collection(db, "products");
       const StorageRef = ref(
-        storage,`products/productsImages${Date.now() + enterimg.name}`
+        storage,
+        `products/productsImages${Date.now() + entertitle}`
       );
       const uploadTask = uploadBytesResumable(StorageRef, enterimg);
 
@@ -30,6 +31,7 @@ const AddProduct = () => {
           // toast.error("upload falied ");
         },
         () => {
+          console.log(uploadTask,'dd')
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadUrl) => {
             await addDoc(docRef, {
               productName: entertitle,

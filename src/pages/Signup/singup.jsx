@@ -29,7 +29,7 @@ const Signup = () => {
         password
       );
       const user = userCredential.user;
-      const storageRef = ref(storage, `image/images${Date.now() + username}`);
+      const storageRef = ref(storage, `image/imges`);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       uploadTask.on(
@@ -102,14 +102,14 @@ const Signup = () => {
                       required
                     />
                   </FormGroup>
-                  <FormGroup className="form_grp">
+                  {/* <FormGroup className="form_grp">
                     <input
                       style={{ border: "none" }}
                       type="file"
                       onChange={(e) => setFile(e.target.files[0])}
                       required
                     />
-                  </FormGroup>
+                  </FormGroup> */}
                   <button
                     style={{ width: "200px" }}
                     className="check_out_btn my-4"
