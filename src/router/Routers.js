@@ -14,11 +14,12 @@ import Profile from "../pages/Profile/profile";
 import AddProduct from "../admin/AddProduct";
 import AllProduct from "../admin/AllProduct";
 import DashBoard from "../admin/DashBoard";
+import Users from "../admin/Users";
 const Routers = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Navigate to="/Home" />}></Route>
+        <Route path="/" element={<Navigate to="/Home" n/>}></Route>
         <Route path="home" element={<Home />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="shop" element={<Shop />}></Route>
@@ -39,6 +40,8 @@ const Routers = () => {
           <Route path="dashboard" element={<DashBoard />}></Route>
           <Route path="dashboard/add-product" element={<AddProduct />}></Route>
           <Route path="dashboard/all-products" element={<AllProduct />}></Route>
+          <Route path="dashboard/users" element={<Users />}></Route>
+
         </Route>
         <Route
           path="profile"

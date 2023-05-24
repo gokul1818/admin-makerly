@@ -8,9 +8,11 @@ import Clock from "../../components/ui/Clock";
 import { motion } from "framer-motion";
 import Service from "../../service/service";
 import ProductList from "../../components/ui/ProductList";
-import products from "../../assets/data/products";
+// import products from "../../assets/data/products";
+import useGetData from "../../customhook/useGetData";
 import countertimer from "../../assets/images/counter-timer-img.png";
 const Home = () => {
+  const { data: products, loading } = useGetData("products");
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestProducts, setbestProducts] = useState([]);
   const [newArrivals, setnewArrivals] = useState([]);
@@ -20,15 +22,15 @@ const Home = () => {
       (items) => items.category === "chair"
     );
     const filteredbest = products.filter((items) => items.category === "sofa");
-const filternew =products.filter ((items)=>items.category === 'mobile')
+    const filternew = products.filter((items) => items.category === "mobile");
     setTrendingProducts(filteredTrending);
     setbestProducts(filteredbest);
-    setnewArrivals(filternew)
-  }, []);
+    setnewArrivals(filternew);
+  }, [products]);
   const year = new Date().getFullYear();
   useEffect(() => {
     window.scrollTo(0, 0);
-  } );
+  });
 
   return (
     <div>
@@ -73,7 +75,7 @@ const filternew =products.filter ((items)=>items.category === 'mobile')
         <section className="trending_sale">
           <Container>
             <Row>
-              <Col lg="12" >
+              <Col lg="12">
                 <h3 className="text-center m-5">Trending Products</h3>
               </Col>
               <ProductList data={trendingProducts} />

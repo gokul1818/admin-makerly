@@ -1,0 +1,29 @@
+.revenue_box,.order_box,.products_box,.users_box {
+    margin: 40px 10px;
+    border-radius: 10px;
+    padding: 10px ;
+
+}
+.revenue_box,.order_box,.products_box,.users_box , h5{
+
+    color:#5e6168;
+    font-size: 10px;
+}
+.revenue_box,.order_box,.products_box,.users_box , span{
+    color: black;
+    font-size: 25px;
+    /* margin: 10px 10px ; */
+}
+.revenue_box{
+    background-color:#00d6c4;
+
+}
+.order_box{
+    background-color:#ffd067;
+}
+.products_box{
+    background-color:#d2f3f7;
+}
+.users_box{
+    background-color:#acb67d;
+}

@@ -1,31 +1,53 @@
-import React, { useState, useRef,useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../../styles/productdetails.css";
 import Helmet from "../../components/helmet/helmet";
 import { Container, Row, Col } from "reactstrap";
 import CommonSection from "../../components/ui/Commonsection";
 import { useParams } from "react-router-dom";
-import products from "../../assets/data/products";
+// import products from "../../assets/data/products";
 import { motion } from "framer-motion";
 import ProductList from "../../components/ui/ProductList";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import useGetData from "../../customhook/useGetData";
+import { db } from "../../firebase.config";
+import { doc, getDoc } from "firebase/firestore";
+// import useGetData from "../../customhook/useGetData";
 import { cart_Action } from "../../redux/slicer/cart_slice";
 const ProductDetails = () => {
+  // const { data: products, loading } = useGetData("products");
+
   const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
-  } );
+  });
+  const [product, setProduct] = useState({});
   const [tab, settab] = useState("desc");
   const [rating, setrating] = useState();
   const { id } = useParams();
-  const product = products.find((item) => item.id === id);
+  const { data: products } = useGetData("products");
+
+  const docRef = doc(db, "products", id);
+
+  useEffect(() => {
+    const getProduct = async () => {
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setProduct(docSnap.data());
+      } else {
+        console.log("no products");
+      }
+    };
+    getProduct();
+  }, []);
+  // const product = products.find((item) => item.id === id);
   const {
     imgUrl,
     category,
     productName,
     price,
-    avgRating,
-    reviews,
+    // avgRating,
+    // reviews,
     description,
     shortDesc,
   } = product;
@@ -43,7 +65,6 @@ const ProductDetails = () => {
       rating,
     };
     console.log(reviewobj);
- 
   };
   const addTocart = () => {
     dispatch(
@@ -59,12 +80,12 @@ const ProductDetails = () => {
   return (
     <section className="head">
       <Helmet>
-        <CommonSection title={productName} />
+        {/* <CommonSection title={productName} /> */}
         <section>
           <Container>
             <Row>
               <Col lg="6">
-                <div className="product_img">
+                <div className="product_img mt-4">
                   <img src={imgUrl} alt="img"></img>
                 </div>
               </Col>
@@ -89,7 +110,7 @@ const ProductDetails = () => {
                         <i class="ri-star-s-fill"></i>
                       </span>
                     </div>
-                    <p>{`(${avgRating}Rating)`}</p>
+                    {/* <p>{`(${avgRating}Rating)`}</p> */}
                   </div>
                   <span className="price">{`₹${price}`}</span>
                   <p>{shortDesc}</p>
@@ -120,7 +141,7 @@ const ProductDetails = () => {
                     className={`${tab === "rev" ? "active" : ""}`}
                     onClick={() => settab("rev")}
                   >
-                    Review({reviews.length})
+                    {/* Review({reviews.length}) */}
                   </h6>
                 </div>
 
@@ -131,14 +152,14 @@ const ProductDetails = () => {
                 ) : (
                   <div className="product_review">
                     <div className="review_wrapper">
-                      <ul>
+                      {/* <ul>
                         {reviews.map((item, index) => (
                           <li key={index}>
                             <span>{item.rating} (rating)</span>
                             <p>{item.text}</p>
                           </li>
                         ))}
-                      </ul>
+                      </ul> */}
                       <div className="review_form mx-5">
                         <form onSubmit={handleSubmit}>
                           <h4 className="d-block">Leave your comments</h4>
