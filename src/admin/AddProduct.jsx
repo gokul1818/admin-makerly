@@ -18,20 +18,21 @@ const AddProduct = () => {
   const addProduct = async (e) => {
     e.preventDefault();
     setloading(true);
-
     try {
       const docRef = await collection(db, "products");
-      const StorageRef = ref(storage, `/productImages`);
+      const StorageRef = ref(
+        storage,`products/productsImages${Date.now() + enterimg.name}`
+      );
       const uploadTask = uploadBytesResumable(StorageRef, enterimg);
 
       uploadTask.on(
         () => {
-          toast.error("upload falied ");
+          // toast.error("upload falied ");
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadUrl) => {
             await addDoc(docRef, {
-              productName : entertitle,
+              productName: entertitle,
               shortDesc: enterShortDes,
               description: enterdescription,
               category: entercategory,
@@ -39,8 +40,15 @@ const AddProduct = () => {
               imgUrl: downloadUrl,
             });
           });
+          setimg("");
+          setShortDes("");
+          setcategory("");
+          setdescription("");
+          settilte("");
+          setprice("");
           setloading(false);
           toast.success("product added");
+
           navigate("/dashboard/all-products");
         }
       );
@@ -128,7 +136,9 @@ const AddProduct = () => {
                     </FormGroup>
                   </div>
                   <div>
-                    <button type="submit">Add Product</button>
+                    <button className="btn btn-primary" type="submit">
+                      Add Product
+                    </button>
                   </div>
                 </Form>
               </>

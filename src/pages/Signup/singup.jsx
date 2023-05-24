@@ -29,7 +29,7 @@ const Signup = () => {
         password
       );
       const user = userCredential.user;
-      const storageRef = ref(storage, `image`);
+      const storageRef = ref(storage, `image/images${Date.now() + username}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       uploadTask.on(
@@ -42,19 +42,19 @@ const Signup = () => {
               displayName: username,
               photoURL: downloadURL,
             });
-            await setDoc(doc(db,"users", user.uid), {
+            await setDoc(doc(db, "users", user.uid), {
               uid: user.uid,
               displayName: username,
-              email,  
+              email,
               photoURL: downloadURL,
             });
           });
         }
       );
       setloading(false);
-      console.log(user)
+      console.log(user);
       toast.success("account added successfully");
-   
+
       navigate("/home");
     } catch (error) {
       setloading(false);

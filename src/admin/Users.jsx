@@ -7,10 +7,10 @@ import { toast } from "react-toastify";
 const Users = () => {
   const { data: userData, loading } = useGetData("users");
 
-  const deleteUser = async (id) => {
-    await deleteDoc(doc(db, "users", id));
-    toast.success("user deleted");
-  };
+  // const deleteUser = async (id) => {
+  //   await deleteDoc(doc(db, "users", id));
+  //   toast.success("user deleted");
+  // };
   return (
     <section>
       <Container>
@@ -25,7 +25,7 @@ const Users = () => {
                   <th>Images</th>
                   <th>UserName</th>
                   <th>Email</th>
-                  <th>Action</th>
+                  {/* <th>Action</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -42,9 +42,9 @@ const Users = () => {
                       </td>
                       <td>{user.displayName}</td>
                       <td>{user.email}</td>
-                      <td>
+                      {/* <td>
                         <button onClick={deleteUser} className=" ">delete</button>
-                      </td>
+                      </td> */}
                     </tr>
                   ))
                 )}

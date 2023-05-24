@@ -6,7 +6,7 @@ const Clock = () => {
   const [seconds, setseconds] = useState();
   let interval;
   const countDown = () => {
-    const destination = new Date("may 12 2023").getTime();
+    const destination = new Date("may 30 2023").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const different = destination - now;
