@@ -4,8 +4,11 @@ import { Container, Col, Row } from "reactstrap";
 import serviceData from "../assets/data/service";
 import { motion } from "framer-motion";
 const Service = () => {
+
+
   return (
-    <section className="service">
+    <section className="animated-element {
+      ">
       <Container>
         <Row>
           {serviceData.map((items, index) => (

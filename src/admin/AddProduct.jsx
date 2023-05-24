@@ -12,6 +12,7 @@ const AddProduct = () => {
   const [enterdescription, setEnterDescription] = useState("");
   const [entercategory, setEntercategory] = useState("");
   const [enterprice, setEnterPrice] = useState("");
+  const [enterMRP, setMRP] = useState("");
   const [enterimg, setEnterImg] = useState("");
   const [loading, setloading] = useState(false);
 
@@ -42,6 +43,7 @@ const AddProduct = () => {
               category: entercategory,
               price: enterprice,
               imgUrl: downloadUrl,
+              mrp:enterMRP,
             });
           });
 
@@ -50,6 +52,8 @@ const AddProduct = () => {
           setEnterDescription("");
           setEntercategory("");
           setEnterPrice("");
+          setMRP("");
+
           setEnterImg("");
           setloading(false);
           toast.success("Product added");
@@ -155,6 +159,16 @@ const AddProduct = () => {
                         required
                         onChange={(e) =>setEnterPrice(e.target.value)}
                         value={enterprice}
+                        placeholder="Price"
+                      ></input>
+                    </FormGroup>
+                    <FormGroup className="form_grp">
+                      <span>MRP</span>
+                      <input
+                        type="number"
+                        required
+                        onChange={(e) =>setMRP(e.target.value)}
+                        value={enterMRP}
                         placeholder="Price"
                       ></input>
                     </FormGroup>

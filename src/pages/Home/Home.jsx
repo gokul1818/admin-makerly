@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Helmet from "../../components/helmet/helmet";
 import { Container, Row, Col } from "reactstrap";
-import hero_img from "../../assets/3d_hero.png";
+import hero_img from "../../assets/hero.jpeg";
+import hero_img1 from "../../assets/hero1.jpg";
+import hero_img2 from "../../assets/hero2.jpg";
+
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
 import Clock from "../../components/ui/Clock";
@@ -11,6 +14,10 @@ import ProductList from "../../components/ui/ProductList";
 // import products from "../../assets/data/products";
 import useGetData from "../../customhook/useGetData";
 import countertimer from "../../assets/images/counter-timer-img.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const Home = () => {
   const { data: products, loading } = useGetData("products");
   const [trendingProducts, setTrendingProducts] = useState([]);
@@ -31,14 +38,41 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
 
   return (
     <div>
       <Helmet title={"Home"}>
         <section className="section">
+          <div className="mt-5 swipper">
+            {/* <h1>Welcome to the Homepage</h1> */}
+            <Slider {...settings}>
+              <div className="swip">
+                <img src={hero_img} alt="Image 1" />
+              </div>
+              <div className="swip">
+                <img src={hero_img1} alt="Image 2" />
+              </div>
+              <div className="swip">
+                <img src={hero_img2} alt="Image 3" />
+              </div>
+            </Slider>
+          </div>
           <Container>
             <Row>
-              <Col lg="6" md="6">
+              {/* <Col lg="12">
+              
+              </Col> */}
+
+              {/* <Col lg="6" md="6">
                 <div className="content mt-3">
                   <p className="subtitle mb-0 ">latest Products in {year}</p>
                   <h2 className="heading">
@@ -67,11 +101,10 @@ const Home = () => {
                 <div className="hero_img ">
                   <img className="" src={hero_img} alt="img"></img>
                 </div>
-              </Col>
+              </Col> */}
             </Row>
           </Container>
         </section>
-        <Service />
         <section className="trending_sale">
           <Container>
             <Row>
@@ -82,6 +115,8 @@ const Home = () => {
             </Row>
           </Container>
         </section>
+        <Service />
+
         <section className="best_sale">
           <Container>
             <Row>

@@ -3,7 +3,16 @@
     background: #334757;
     color: #e5e5e5;
     height: 450px;
-    margin-top: 60px;
+    margin-top: 23px;
+}
+.swipper{
+    width: 100%;
+    padding: 0px 30px;
+}
+.swip  img{
+    object-fit: cover;
+    height: 450px;
+    width: 100%;
 }
 
 .content_sub {
@@ -142,11 +151,20 @@
 
     .section {
         overflow-y: hidden;
-        background: #334757;
+        background: none;
         color: #e5e5e5;
         height: 300px;
-        margin-top: 60px;
+        margin-top: 10px;
         
+    }
+    .swipper{
+        /* width: 100%; */
+        padding: 0px 0px;
+    }
+    .swip  img{
+        object-fit: cover;
+        height: 300px;
+        width: 100%;
     }
 
     .content_sub {

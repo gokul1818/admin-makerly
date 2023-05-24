@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Helmet from "../../components/helmet/helmet";
 import CommonSection from "../../components/ui/Commonsection";
 import { Container, Row, Col } from "reactstrap";
@@ -6,8 +6,23 @@ import { Container, Row, Col } from "reactstrap";
 import "../../styles/shop.css";
 import product from "../../assets/data/products";
 import ProductList from "../../components/ui/ProductList";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase.config";
+
 const Shop = () => {
   const [productdata, setproductdata] = useState(product);
+
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const querySnapshot = await getDocs(collection(db, "products"));
+      const productsData = querySnapshot.docs.map((doc) => doc.data());
+      setProducts(productsData);
+    };
+
+    fetchProducts();
+  }, []);
+
   const handleFilter = (e) => {
     const filtervalue = e.target.value;
     if (filtervalue === "sofa") {
@@ -46,14 +61,14 @@ const Shop = () => {
   };
   useEffect(() => {
     window.scrollTo(0, 0);
-  } );
+  });
   return (
     <Helmet title="shop ">
       <CommonSection title="product" />
       <section>
         <Container>
           <Row>
-            <Col lg="3" md="3" xs='6' >
+            <Col lg="3" md="3" xs="6">
               <div className="filter_widget">
                 <select onChange={handleFilter}>
                   <option>filter by category</option>
@@ -64,7 +79,7 @@ const Shop = () => {
                 </select>
               </div>
             </Col>
-            <Col lg="3" md="3" xs='6'>
+            <Col lg="3" md="3" xs="6">
               <div className="filter_widget">
                 <select>
                   <option>Sort By</option>
@@ -74,7 +89,7 @@ const Shop = () => {
                 </select>
               </div>
             </Col>
-            <Col lg="6" md="6" xs='12'>
+            <Col lg="6" md="6" xs="12">
               <div className="search_box text-center mx-auto">
                 <input
                   type="text"
@@ -97,7 +112,7 @@ const Shop = () => {
             ) : (
               // <ProductList data={productdata} />
 
-              <ProductList data={productdata} />
+              <ProductList data={products} />
             )}
           </Row>
         </Container>

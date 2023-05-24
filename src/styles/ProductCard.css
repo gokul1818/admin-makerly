@@ -21,6 +21,11 @@ cursor: pointer;
 
     margin: 0;
 }
+.product_info span{
+    font-size: 15px;
+    display: block;
+    
+}
 
 .product_bottom span {
     font-weight: 700;
@@ -72,8 +77,12 @@ cursor: pointer;
     
         margin: 0;
     }
+    .product_info span{
+        font-size: 12px;
+    }
     
     .product_bottom span {
+        font-size: 15px;
         font-weight: 700;
         padding: 10px 5px;
     }

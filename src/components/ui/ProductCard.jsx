@@ -43,6 +43,7 @@ const addTocart =()=>{
           <div className="product_info">
             <h4>{item.productName}</h4>
             <span className="p-2">{item.category}</span>
+            <span className="ps-2 text-decoration-line-through text-success ">MRP: ₹{item.mrp}</span>
           </div>
         </Link>
       </motion.div>

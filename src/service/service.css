@@ -1,3 +1,21 @@
+.animated-element {
+    animation-name: myAnimation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes myAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 .service_items {
     margin-top: 30px;
     background-color: #575777;
@@ -34,8 +52,26 @@
     color: #e6e6e6;
     font-size: 15px;
 }
-@media only screen and (max-width: 770px) {
 
+@media only screen and (max-width: 770px) {
+    .animated-element {
+        animation-name: myAnimation;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+      }
+      
+      @keyframes myAnimation {
+        0% {
+          opacity: 0;
+          transform: translatex(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translatex(0);
+        }
+      }
+    
     .service_items {
         margin-top: 30px;
         background-color: #575777;
@@ -44,10 +80,10 @@
         border-radius: 15px;
         height: 100px;
         cursor: pointer;
-    
+
         align-items: center;
     }
-    
+
     .service_items span i {
         background: black;
         border-radius: 50%;
@@ -57,17 +93,17 @@
         margin-right: 10px;
         /* display: flex; */
         /* justify-content: center; */
-    
-    
+
+
         /* text-align: center; */
     }
-    
+
     .service_card {
-    
+
         font-family: 'Josefin Sans';
         color: #fff;
     }
-    
+
     .service_card p {
         color: #e6e6e6;
         font-size: 15px;

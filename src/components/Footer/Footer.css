@@ -3,8 +3,9 @@
     color: #3d3d3d;
     padding-top: 10px;
 }
-.footer_links h4{
-color: black;
+.footer_links span{
+    color: #3d3d3d;
+
 font-weight: 500;
 font-size: 20px;
 }
@@ -15,10 +16,11 @@ font-size: 20px;
         color: #3d3d3d;
         padding-top: 10px;
     }
-    .footer_links h4{
-    color: black;
+    .footer_links span {
+        color: #3d3d3d;
+
     font-weight: 500;
-    font-size: 20px;
+    font-size: 15px;
     }
     
 }
