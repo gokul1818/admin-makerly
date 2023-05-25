@@ -55,7 +55,7 @@ const Signup = () => {
       console.log(user);
       toast.success("account added successfully");
 
-      navigate("/home");
+      navigate("/dashboard");
     } catch (error) {
       setloading(false);
       toast.error(error.message);

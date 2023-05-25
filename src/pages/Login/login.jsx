@@ -29,7 +29,7 @@ const Login = () => {
       setloading(false);
       toast("login successfully");
 
-      navigate("/home");
+      navigate("/dashboard");
     } catch (error) {
       setloading(false);
       toast(error.message);
@@ -46,7 +46,7 @@ const Login = () => {
             </Col>): (
               <Col lg="6  m-auto text-center form_box">
               <Form className="login_form  " onSubmit={signIn}>
-                <h6 className=" fs-1 fw-1 my-4">Login</h6>
+                <h6 className=" fs-1 fw-1 my-4"> Admin Login</h6>
                 <FormGroup className="form_grp">
                   <input
                     value={email}
@@ -69,7 +69,7 @@ const Login = () => {
                 >
                   Login
                 </button>
-                <Link
+                {/* <Link
                   style={{
                     textDecorationLine: "none",
                     color: "grey",
@@ -79,7 +79,7 @@ const Login = () => {
                   <motion.p whileTap={{ scale: 0.9 }}>
                     Don't have an account? Create an account
                   </motion.p>
-                </Link>
+                </Link> */}
               </Form>
             </Col>
             )}

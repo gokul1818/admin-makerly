@@ -4,7 +4,7 @@ import { db, storage } from "../firebase.config";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { collection, addDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
-
+import "../styles/addproduct.css";
 // import { upload } from "@testing-library/user-event/dist/upload";
 const AddProduct = () => {
   const [entertitle, setEntertitle] = useState("");
@@ -43,7 +43,7 @@ const AddProduct = () => {
               category: entercategory,
               price: enterprice,
               imgUrl: downloadUrl,
-              mrp:enterMRP,
+              mrp: enterMRP,
             });
           });
 
@@ -157,7 +157,7 @@ const AddProduct = () => {
                       <input
                         type="number"
                         required
-                        onChange={(e) =>setEnterPrice(e.target.value)}
+                        onChange={(e) => setEnterPrice(e.target.value)}
                         value={enterprice}
                         placeholder="Price"
                       ></input>
@@ -167,7 +167,7 @@ const AddProduct = () => {
                       <input
                         type="number"
                         required
-                        onChange={(e) =>setMRP(e.target.value)}
+                        onChange={(e) => setMRP(e.target.value)}
                         value={enterMRP}
                         placeholder="Price"
                       ></input>
@@ -178,12 +178,11 @@ const AddProduct = () => {
                         onChange={(e) => setEntercategory(e.target.value)}
                         value={entercategory}
                       >
+                        <option value="sofa">select category </option>
                         <option value="chair">chair</option>
-                        <option value="sofa">sofa</option>
-
+                        <option value="chair">sofa</option>
                         <option value="watch">watch</option>
                         <option value="wireless">wireless</option>
-
                         <option value="mobile">mobile</option>
                       </select>
                     </FormGroup>
@@ -191,7 +190,8 @@ const AddProduct = () => {
                   <div>
                     <FormGroup className="form_grp">
                       <span>Product Image</span>
-                      <input
+                      <input 
+                  
                         required
                         onChange={(e) => setEnterImg(e.target.files[0])}
                         type="file"

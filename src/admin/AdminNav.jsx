@@ -47,7 +47,7 @@ const AdminNav = () => {
                   <span>
                     <i class="ri-settings-4-fill"></i>
                   </span>
-                  <img src={usericon} alt="" />
+                  {/* <img src={usericon} alt="" /> */}
                 </div>
               </div>
             </Row>
