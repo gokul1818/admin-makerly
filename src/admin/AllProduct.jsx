@@ -12,7 +12,7 @@ const AllProduct = () => {
   const deleteProduct = async (id) => {
     await deleteDoc(doc(db, "products", id));
     toast.success('product deleted')
-  };
+  };  
   // console.log(productData)
   return (
     <section>
@@ -26,6 +26,8 @@ const AllProduct = () => {
                   <th>Title</th>
 
                   <th>Category</th>
+
+                  <th>MRP</th>
 
                   <th>Price</th>
 
@@ -46,6 +48,8 @@ const AllProduct = () => {
                       </td>
                       <td>{item.productName}</td>
                       <td>{item.category}</td>
+                      <td>{item.mrp}</td>
+
                       <td>{item.price}</td>
                       <td>
                         <button

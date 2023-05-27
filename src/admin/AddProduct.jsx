@@ -144,13 +144,14 @@ const AddProduct = () => {
                     </FormGroup>
                     <FormGroup className="form_grp">
                       <span>Description</span>
-                      <input
+                      <textarea
                         type="text"
                         required
+                        rows={5}
                         onChange={(e) => setEnterDescription(e.target.value)}
                         value={enterdescription}
                         placeholder="description"
-                      ></input>
+                      ></textarea>
                     </FormGroup>
                     <FormGroup className="form_grp">
                       <span>Price</span>
@@ -198,8 +199,8 @@ const AddProduct = () => {
                       ></input>
                     </FormGroup>
                   </div>
-                  <div>
-                    <button className="btn btn-primary" type="submit">
+                  <div className="d-flex justify-content-center mb-4">
+                    <button className="btn btn-primary " type="submit">
                       Add Product
                     </button>
                   </div>

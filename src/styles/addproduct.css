@@ -1,43 +1,57 @@
 .form_grp{
- /* text-align:center ;    */
-}
-.form_grp span{
-   /* margin: 0px 10px ; */
-   color: goldenrod;
-
-   /* color: hsl(hue, saturation, lightness);  */
-   display: block;
-font-size: 15px;
-
-}
-.form_grp input{
+    /* text-align:center ;    */
+   }
+   .form_grp span{
+      /* margin: 0px 10px ; */
+      color: goldenrod;
+   
+      /* color: hsl(hue, saturation, lightness);  */
+      display: block;
+   font-size: 15px;
+   
+   }
+   .form_grp input{
+       padding: 5px 10px;
+       /* border: none; */
+       outline: none;
+   border-radius: 8px;
+   width: 50%;
+   }
+   .form_grp textarea{
     padding: 5px 10px;
     /* border: none; */
     outline: none;
 border-radius: 8px;
 width: 50%;
 }
-
-.form_grp select{
-    padding: 5px 10px;
-    /* border: none; */
-    outline: none;
-border-radius: 8px;
-width: 50%;
-}
-@media only screen and (max-width: 600px) {
-    .form_grp input{
+   
+   .form_grp select{
+       padding: 5px 10px;
+       /* border: none; */
+       outline: none;
+   border-radius: 8px;
+   width: 50%;
+   }
+   @media only screen and (max-width: 600px) {
+       .form_grp input{
+           padding: 5px 10px;
+           /* border: none; */
+           outline: none;
+       border-radius: 8px;
+       width: 100%;
+       }
+       .form_grp select{
+           padding: 5px 10px;
+           /* border: none; */
+           outline: none;
+       border-radius: 8px;
+       width: 100%;
+       }
+       .form_grp textarea{
         padding: 5px 10px;
         /* border: none; */
         outline: none;
     border-radius: 8px;
     width: 100%;
     }
-    .form_grp select{
-        padding: 5px 10px;
-        /* border: none; */
-        outline: none;
-    border-radius: 8px;
-    width: 100%;
-    }
-}
+   }
