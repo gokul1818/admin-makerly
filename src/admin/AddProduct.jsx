@@ -200,11 +200,13 @@ const AddProduct = () => {
                       ></input>
                     </FormGroup>
                   </div>
-                  <div className="d-flex justify-content-center mb-4">
-                    <button className="btn btn-primary " type="submit">
+
+                    <FormGroup className="form_grp">
+                    <button className=" " type="submit">
                       Add Product
                     </button>
-                  </div>
+                     
+                    </FormGroup>
                 </Form>
               </>
             )}

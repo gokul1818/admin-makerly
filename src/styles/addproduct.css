@@ -44,19 +44,110 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 30px;
-    margin: 10px 0px ;
+    margin: 10px 0px;
 }
 
 .swipperBanner img {
     height: 200px;
     width: 100%;
-    margin: 10px 0px ;
+    margin: 10px 0px;
     border-radius: 10px;
 
 }
 
 .swipperBanner button {
     height: 30px;
+}
+
+
+
+
+.form_grp_d button {
+    outline: none;
+ 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    /* padding: 10px 5px; */
+
+    position: relative;
+    /* padding: 0px 10px; */
+
+    overflow: hidden;
+    /* background:#d0cdff; */
+    border-radius: 10px;
+    background: linear-gradient(to right, #df2c2c, #df2c2c);
+}
+
+.form_grp_d button::after {
+
+
+
+
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width:200%;
+    height: 500%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), transparent, rgba(255, 255, 255, 0.5));
+    transform: rotate(-45deg);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(-45deg) translateX(-200%);
+    }
+
+    100% {
+        transform: rotate(-45deg) translateX(200%);
+    }
+}
+
+
+
+.form_grp button {
+    outline: none;
+ 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 5px;
+
+    position: relative;
+    /* padding: 0px 10px; */
+
+    overflow: hidden;
+    /* background:#d0cdff; */
+    border-radius: 10px;
+    background: linear-gradient(to right, #443c63, #443c63);
+}
+
+.form_grp button::after {
+
+
+
+
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width:200%;
+    height: 500%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), transparent, rgba(255, 255, 255, 0.5));
+    transform: rotate(-45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(-45deg) translateX(-200%);
+    }
+
+    100% {
+        transform: rotate(-45deg) translateX(200%);
+    }
 }
 
 @media only screen and (max-width: 600px) {

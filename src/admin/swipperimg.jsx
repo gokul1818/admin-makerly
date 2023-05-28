@@ -63,7 +63,7 @@ const SwipperOffer = () => {
                   <input required type="file" onChange={handleImageChange} />
                 </FormGroup>
                 <FormGroup className="form_grp">
-                  <button type="submit">Add Limited Offer</button>
+                  <button  type="submit">Add Limited Offer</button>
                 </FormGroup>
               </Form>
             )}
@@ -76,9 +76,12 @@ const SwipperOffer = () => {
                 <Col lg='8'>
                 <img src={item.imageUrl}></img>
                 </Col>
+                <div className="form_grp_d">
                 <button className="btn btn-danger" onClick={() => deleteProduct(item.id)}>
                   delete{" "}
                 </button>{" "}
+
+                </div>
               </div>
             ))}
           </Col>

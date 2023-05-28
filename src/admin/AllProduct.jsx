@@ -52,12 +52,15 @@ const AllProduct = () => {
 
                       <td>{item.price}</td>
                       <td>
+                        <div className="form_grp_d">
+
                         <button
                           onClick={() => deleteProduct(item.id)}
-                      
-                        >
+                          
+                          >
                           delete{" "}
                         </button>{" "}
+                          </div>
                       </td>
                     </tr>
                   ))
