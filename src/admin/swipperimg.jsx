@@ -68,12 +68,14 @@ const SwipperOffer = () => {
               </Form>
             )}
           </Col>
-          <Col lg="6">
+          <Col lg="6" md='12'>
             <h2 className="text-center"> Offer Banner </h2>
 
             {ImagesOffer.map((item, index) => (
               <div key={index} className="swipperBanner">
+                <Col lg='8'>
                 <img src={item.imageUrl}></img>
+                </Col>
                 <button className="btn btn-danger" onClick={() => deleteProduct(item.id)}>
                   delete{" "}
                 </button>{" "}
