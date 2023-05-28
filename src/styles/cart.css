@@ -3,6 +3,7 @@
     height: 50px !important;
     object-fit: cover;
 }
+
 tbody i{
     cursor: pointer;
 }

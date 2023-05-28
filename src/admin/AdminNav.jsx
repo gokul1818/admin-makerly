@@ -38,12 +38,7 @@ const AdminNav = () => {
                 <div className="logo">
                   <h2>Makerly</h2>
                 </div>
-                <div className="admin_search_box">
-                  <input placeholder="search.." type="text" />
-                  <span>
-                    <i class="ri-search-2-line"></i>
-                  </span>
-                </div>
+             
                 <div className="admin_right">
                   <span>
                     <i class="ri-notification-4-line"></i>
@@ -55,16 +50,7 @@ const AdminNav = () => {
                 </div>
               </div>
             </Row>
-            <Row>
-              <Col lg='12'>
-            <div className="admin_search_box_mobile">
-                  <input placeholder="search.." type="text" />
-                  <span>
-                    <i class="ri-search-2-line"></i>
-                  </span>
-                </div>
-              </Col>
-          </Row>    
+            
           </Container>
         </div>
       </header>
@@ -81,7 +67,7 @@ const AdminNav = () => {
                       }
                       style={{ textDecorationLine: "none", color: "black" }}
                       to={item.path}
-                    >
+                      >
                       {item.display}
                     </NavLink>
                   </li>

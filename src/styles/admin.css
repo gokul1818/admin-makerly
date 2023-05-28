@@ -26,9 +26,10 @@
 
 .admin_search_box {
     display: flex;
-    background-color: aliceblue;
+    background-color: rgb(79, 79, 79);
     padding: 2px 10px;
     margin: 10px;
+    float: right;
     /* display: none; */
     border-radius: 10px;
 }
@@ -36,9 +37,17 @@
 .admin_search_box input {
     background-color: transparent;
     outline: none;
+    color: #fff;
+    /* background: #fff; */
+
+
     border: none;
 
 
+}
+
+.admin_search_box i {
+    color: #fff;
 }
 
 .admin_right span {
@@ -69,52 +78,48 @@
     border-radius: 10px;
     font-weight: 700;
 }
-  .admin_search_box_mobile {
-    display: flex;
-    background-color: aliceblue;
-    padding: 10px;
-    /* margin: 10px; */
-    display: none;
-    /* width:90% ; */
-           text-align: center;
-    margin: 10px 10px;
-    border-radius: 10px;
-}
-
-.admin_search_box_mobile input {
-    background-color: transparent;
-    outline: none;
-    border: none;
-    width: 100%;
 
 
-}
 
 @media only screen and (max-width: 600px) {
     .admin_menu {
-        
+
         background-color: rgb(122, 122, 122);
     }
+
     .admin_right img {
         width: 30px;
         height: 30px;
         margin-top: 5px;
         border-radius: 50%;
-    
+
     }
 
     .admin_navigation {
         text-align: start;
-        align-items: center;
-        display: flex;
+        padding: 0%;
+        /* align-items: center; */
+        /* display: flex; */
+
+        /* margin-left: 20px; */
+        /* justify-content: space-between; */
+
     }
 
     .admin_menu_list {
-        display: block;
+        /* display: inline-block; */
         /* align-items: center; */
-        margin: 10px 20px;
+        /* padding-left: 10px; */
+        display: inline-block;
+        padding: 0px;
+        margin: 0px;
+        padding: 10px 5px;
+        /* background-color: aqua; */
+        /* justify-content: space-between; */
+        /* column-gap: 10px; */
+        /* margin: 10px 20px; */
         /* justify-content: center; */
-        margin: 10px;
+        /* margin: 10px; */
     }
 
     .active_menu_list {
@@ -127,45 +132,11 @@
         font-weight: 700;
     }
 
-    .admin_search_box {
-        display: flex;
-        background-color: aliceblue;
-        padding: 2px 10px;
-        margin: 10px;
-        display: none;
-        border-radius: 10px;
-    }
-    
-    .admin_search_box input {
-        background-color: transparent;
-        outline: none;
-        border: none;
-    
-    
-    }
-    
-    .admin_search_box_mobile {
-        display: flex;
-        background-color: aliceblue;
-        padding: 3px 10px;
-        /* margin: 10px; */
-        /* display: none; */
-        /* width:90% ; */
-               text-align: center;
-        margin: 10px 10px;
-        border-radius: 10px;
-    }
-    
-    .admin_search_box_mobile input {
-        background-color: transparent;
-        outline: none;
-        border: none;
-        /* padding: 0%; */
-        width: 100%;
-    
-    
-    }
-    .admin_nav_wrapper{
+
+
+
+
+    .admin_nav_wrapper {
         display: flex;
         align-items: center;
         /* justify-content: center; */

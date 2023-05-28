@@ -36,11 +36,7 @@ const AddLimitedOfferForm = () => {
       });
 
       toast.success("Offer added");
-      setProductName("");
-      setDescription("");
-      setOriginalPrice("");
-      setDiscountedPrice("");
-      setEndDate("");
+  
       setImage(null);
       setloading(false);
       console.log("Limited offer added to Firestore");

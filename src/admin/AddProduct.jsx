@@ -15,6 +15,7 @@ const AddProduct = () => {
   const [enterMRP, setMRP] = useState("");
   const [enterimg, setEnterImg] = useState("");
   const [loading, setloading] = useState(false);
+  const [enterlist, setEnterList] = useState("");
 
   const addProduct = async (e) => {
     e.preventDefault();
@@ -44,6 +45,7 @@ const AddProduct = () => {
               price: enterprice,
               imgUrl: downloadUrl,
               mrp: enterMRP,
+              List: enterlist,
             });
           });
 
@@ -53,7 +55,7 @@ const AddProduct = () => {
           setEntercategory("");
           setEnterPrice("");
           setMRP("");
-
+setEnterList('')
           setEnterImg("");
           setloading(false);
           toast.success("Product added");
@@ -66,50 +68,6 @@ const AddProduct = () => {
     }
   };
 
-  // const addProduct = async (e) => {
-  //   e.preventDefault();
-  //   setloading(true);
-  //   try {
-  //     const docRef = await collection(db, "products");
-  //     const StorageRef = ref(
-  //       storage,
-  //       `products/productsImages${Date.now() + entertitle}`
-  //     );
-  //     const uploadTask = uploadBytesResumable(StorageRef, enterimg);
-
-  //     uploadTask.on(
-  //       () => {
-  //         toast.error("upload falied ");
-  //       },
-  //       () => {
-  //         console.log(uploadTask,'dd')
-  //         getDownloadURL(uploadTask.snapshot.ref).then(async (downloadUrl) => {
-  //           await addDoc(docRef, {
-  //             productName: entertitle,
-  //             shortDesc: enterShortDes,
-  //             description: enterdescription,
-  //             category: entercategory,
-  //             price: enterprice,
-  //             imgUrl: downloadUrl,
-  //           });
-  //         });
-  //         setimg("");
-  //         setShortDes("");
-  //         setcategory("");
-  //         setdescription("");
-  //         settilte("");
-  //         setprice("");
-  //         setloading(false);
-  //         toast.success("product added");
-
-  //         navigate("/dashboard/all-products");
-  //       }
-  //     );
-  //   } catch (error) {
-  //     toast.error(error.message);
-  //     setloading(false);
-  //   }
-  // };
   return (
     <section>
       <Container>
@@ -174,13 +132,27 @@ const AddProduct = () => {
                       ></input>
                     </FormGroup>
                     <FormGroup className="form_grp">
+                      <span>Order List </span>
+                      <select
+                        onChange={(e) => setEnterList(e.target.value)}
+                        value={enterlist}
+                        required
+                      >
+                        <option >select category </option>
+                        <option value="Trending">Trending</option>
+                        <option value="Best">Best</option>
+                        <option value="New">New</option>
+                     
+                      </select>
+                    </FormGroup>
+                    <FormGroup className="form_grp">
                       <span>Category</span>
                       <select
                         onChange={(e) => setEntercategory(e.target.value)}
                         value={entercategory}
                         required
                       >
-                        <option value="sofa">select category </option>
+                        <option >select category </option>
                         <option value="chair">chair</option>
                         <option value="chair">sofa</option>
                         <option value="watch">watch</option>
@@ -192,8 +164,7 @@ const AddProduct = () => {
                   <div>
                     <FormGroup className="form_grp">
                       <span>Product Image</span>
-                      <input 
-                  
+                      <input
                         required
                         onChange={(e) => setEnterImg(e.target.files[0])}
                         type="file"
@@ -201,12 +172,11 @@ const AddProduct = () => {
                     </FormGroup>
                   </div>
 
-                    <FormGroup className="form_grp">
+                  <FormGroup className="form_grp">
                     <button className=" " type="submit">
                       Add Product
                     </button>
-                     
-                    </FormGroup>
+                  </FormGroup>
                 </Form>
               </>
             )}

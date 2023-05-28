@@ -78,7 +78,7 @@ const SwipperOffer = () => {
                 </Col>
                 <div className="form_grp_d">
                 <button className="btn btn-danger" onClick={() => deleteProduct(item.id)}>
-                  delete{" "}
+                  Delete{" "}
                 </button>{" "}
 
                 </div>
