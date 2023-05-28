@@ -7,6 +7,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import AddProduct from "../admin/AddProduct";
 import AllProduct from "../admin/AllProduct";
 import DashBoard from "../admin/DashBoard";
+import SwipperOffer from "../admin/swipperimg";
 import AddLimitedOfferForm from "../admin/addoffers";
 const Routers = () => {
   return (
@@ -23,6 +24,7 @@ const Routers = () => {
           <Route path="dashboard/add-product" element={<AddProduct />}></Route>
           <Route path="dashboard/all-products" element={<AllProduct />}></Route>
           <Route path="dashboard/add-offers" element={<AddLimitedOfferForm />}></Route>
+          <Route path="dashboard/swipper-offer" element={<SwipperOffer />}></Route>
 
           {/* <Route path="dashboard/users" element={<Users />}></Route> */}
 

@@ -23,10 +23,10 @@ const AdminNav = () => {
       display: "Add offers",
       path: "/dashboard/add-offers",
     },
-    // {
-    //   display: "users",
-    //   path: "/dashboard/users",
-    // },
+    {
+      display: "OfferBanner",
+      path: "/dashboard/swipper-offer",
+    },
   ];
   return (
     <>

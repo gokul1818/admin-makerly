@@ -112,7 +112,7 @@ const AddLimitedOfferForm = () => {
 
             <FormGroup className="form_grp">
               <span>Image:</span>
-              <input type="file" onChange={handleImageChange} />
+              <input required type="file" onChange={handleImageChange} />
             </FormGroup>
             <FormGroup className="form_grp">
               <button type="submit">Add Limited Offer</button>

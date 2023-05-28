@@ -1,57 +1,86 @@
-.form_grp{
+.form_grp {
     /* text-align:center ;    */
-   }
-   .form_grp span{
-      /* margin: 0px 10px ; */
-      color: goldenrod;
-   
-      /* color: hsl(hue, saturation, lightness);  */
-      display: block;
-   font-size: 15px;
-   
-   }
-   .form_grp input{
-       padding: 5px 10px;
-       /* border: none; */
-       outline: none;
-   border-radius: 8px;
-   width: 50%;
-   }
-   .form_grp textarea{
+}
+
+.form_grp span {
+    /* margin: 0px 10px ; */
+    color: goldenrod;
+
+    /* color: hsl(hue, saturation, lightness);  */
+    display: block;
+    font-size: 15px;
+
+}
+
+.form_grp input {
     padding: 5px 10px;
     /* border: none; */
     outline: none;
-border-radius: 8px;
-width: 50%;
+    border-radius: 8px;
+    width: 50%;
 }
-   
-   .form_grp select{
-       padding: 5px 10px;
-       /* border: none; */
-       outline: none;
-   border-radius: 8px;
-   width: 50%;
-   }
-   @media only screen and (max-width: 600px) {
-       .form_grp input{
-           padding: 5px 10px;
-           /* border: none; */
-           outline: none;
-       border-radius: 8px;
-       width: 100%;
-       }
-       .form_grp select{
-           padding: 5px 10px;
-           /* border: none; */
-           outline: none;
-       border-radius: 8px;
-       width: 100%;
-       }
-       .form_grp textarea{
+
+.form_grp textarea {
+    padding: 5px 10px;
+    /* border: none; */
+    outline: none;
+    border-radius: 8px;
+    width: 50%;
+}
+
+.form_grp select {
+    padding: 5px 10px;
+    /* border: none; */
+    outline: none;
+    border-radius: 8px;
+    width: 50%;
+}
+
+.swipperBanner {
+    display: flex;
+    background-color: rgb(140, 132, 141);
+    border-radius: 10px;
+    /* border: 1px soild rgb(0, 0, 0); */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+    margin: 10px 0px ;
+}
+
+.swipperBanner img {
+    height: 200px;
+    width: 350px;
+    margin: 10px 0px ;
+    border-radius: 10px;
+
+}
+
+.swipperBanner button {
+    height: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .form_grp input {
         padding: 5px 10px;
         /* border: none; */
         outline: none;
-    border-radius: 8px;
-    width: 100%;
+        border-radius: 8px;
+        width: 100%;
     }
-   }
+
+    .form_grp select {
+        padding: 5px 10px;
+        /* border: none; */
+        outline: none;
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .form_grp textarea {
+        padding: 5px 10px;
+        /* border: none; */
+        outline: none;
+        border-radius: 8px;
+        width: 100%;
+    }
+}
