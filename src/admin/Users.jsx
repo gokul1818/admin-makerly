@@ -22,7 +22,7 @@ const Users = () => {
             <table className="table">
               <thead>
                 <tr>
-                  <th>Images</th>
+                  {/* <th>Images</th> */}
                   <th>UserName</th>
                   <th>Email</th>
                   {/* <th>Action</th> */}
@@ -34,12 +34,12 @@ const Users = () => {
                 ) : (
                   userData?.map((user) => (
                     <tr key={user.uid}>
-                      <td>
+                      {/* <td>
                         <img
                           style={{ width: "100px", height: "100px" }}
                           src={user.photoURL}
                         ></img>
-                      </td>
+                      </td> */}
                       <td>{user.displayName}</td>
                       <td>{user.email}</td>
                       {/* <td>

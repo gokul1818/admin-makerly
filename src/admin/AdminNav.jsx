@@ -24,8 +24,16 @@ const AdminNav = () => {
       path: "/dashboard/add-offers",
     },
     {
-      display: "OfferBanner",
+      display: "Banner",
       path: "/dashboard/swipper-offer",
+    },
+    {
+      display: "users",
+      path: "/dashboard/users",
+    },
+    {
+      display: "orders",
+      path: "/dashboard/orders",
     },
   ];
   return (

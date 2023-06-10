@@ -2,10 +2,13 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import "../styles/dashboard.css";
 import useGetData from "../customhook/useGetData";
-
+import { useNavigate } from "react-router";
 const DashBoard = () => {
+  const navigate=useNavigate()
   const { data: products } = useGetData("products");
   const { data: users } = useGetData("users");
+  const { data: Orders } = useGetData("Orders");
+
 
   return (
     <>
@@ -21,11 +24,11 @@ const DashBoard = () => {
             <Col className="lg-3">
               <div className="order_box">
                 <h5>Order</h5>
-                <span>233</span>
+                <span>{Orders.length}</span>
               </div>
             </Col>
             <Col className="lg-3">
-              <div className="products_box">
+              <div className="products_box" onClick={()=>{navigate('/dashboard/all-products')}}>
                 <h5>Total Product</h5>
                 <span>{products.length}</span>
               </div>

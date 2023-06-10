@@ -69,7 +69,7 @@ const SwipperOffer = () => {
             )}
           </Col>
           <Col lg="6" md='12'>
-            <h2 className="text-center"> Offer Banner </h2>
+            <h2 className="text-center">  Banner </h2>
 
             {ImagesOffer.map((item, index) => (
               <div key={index} className="swipperBanner">

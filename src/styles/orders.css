@@ -1,0 +1,22 @@
+.order_card .unpaid {
+    border-radius: 8px;
+    /* border: 1px solid black; */
+    padding: 10px 20px;
+    margin: 10px 0px;
+    background-color:#d7324a;
+    color: #fff;
+}
+
+.order_card .paid {
+    border-radius: 8px;
+    /* border: 1px solid black; */
+    padding: 10px 20px;
+    margin: 10px 0px;
+    background-color: #8cff8c;
+    color: #000;
+}
+
+.order_details p {
+    font-size: 20px;
+    font-weight: 500;
+}

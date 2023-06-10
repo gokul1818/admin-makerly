@@ -19,8 +19,8 @@ const AllProduct = () => {
   }, [productData]);
 
   const [products, setProducts] = useState([]);
-  
-  // console.log(productData)
+
+console.log('products', products)  // console.log(productData)
   const handleChange = (e) => {
     e.preventDefault();
     const searchteam = e.target.value;
