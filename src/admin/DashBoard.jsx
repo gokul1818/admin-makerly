@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 const DashBoard = () => {
   const navigate=useNavigate()
   const { data: products } = useGetData("products");
-  const { data: users } = useGetData("users");
+  const { data: users } = useGetData("Users");
   const { data: Orders } = useGetData("Orders");
 
 

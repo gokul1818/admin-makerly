@@ -5,7 +5,7 @@ import { db } from "../firebase.config";
 import { deleteDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
 const Users = () => {
-  const { data: userData, loading } = useGetData("users");
+  const { data: userData, loading } = useGetData("Users");
 
   // const deleteUser = async (id) => {
   //   await deleteDoc(doc(db, "users", id));
